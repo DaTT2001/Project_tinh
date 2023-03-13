@@ -44,7 +44,7 @@ function showGameList(data) {
         listGameContainer.innerHTML +=
           `<div class="col-md-3 col-sm-6 col-12">
           <div class="product-card">
-          <a href="./products.html#${data[i].id}">
+          <a href="${checkLogin("products")}#${data[i].id}">
             <img
               src= ${data[i].background_image}
               alt=""
@@ -52,7 +52,7 @@ function showGameList(data) {
             
           </a>
             <div class="product-info">
-              <a href="./products.html#${data[i].id}">
+            <a href="${checkLogin("products")}#${data[i].id}">
               <div class="info-name-price">
                 <p>${data[i].name}</p>
               </div>
@@ -240,3 +240,35 @@ function getPlatforms(platforms) {
   return selectedPlatforms.join("")
 }
 search()
+
+
+//  login logic
+function checkLogin(page) {
+  let uid = window.location.search.split("=")[1];
+  if(!uid) {
+    return "./login.html"
+  }
+  else {
+    return `./${page}.html?${uid}`
+  }
+}
+console.log(window.location.search.split("=")[1]);
+// nav_bar 
+const navBarArea = document.querySelectorAll(".nav-bar div button")
+navBarArea.forEach(nav => {
+  nav.addEventListener("click", (e) => {
+    window.location.assign(`${checkLogin(nav.value)}`)
+  })
+})
+
+// banner click
+const rcmBanner = document.querySelector(".rcm-banner")
+const hotGameBanner = document.querySelector(".hot-game-banner")
+
+function bannerClick(name,page) {
+  name.addEventListener("click", (e) => {
+    window.location.assign(`${checkLogin(page)}`)
+  })
+}
+bannerClick(rcmBanner, "allgames")
+bannerClick(hotGameBanner,"allgames")

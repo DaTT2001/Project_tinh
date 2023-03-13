@@ -22,7 +22,7 @@ $(document).ready(function () {
 
 //dom
 const user = document.querySelector(".user-login");
-const uid = location.hash.slice(10);
+let uid = location.search.slice(5);
 const rcmContainer = document.querySelector(".rcm-product-card-container")
 const hotContainer = document.querySelector(".hot-game-container")
 const productCard = document.querySelector(".product-card")
@@ -71,7 +71,7 @@ function showRcmGames(data) {
     rcmContainer.innerHTML +=
     `<div class="col-md-3 col-sm-6 col-12">
     <div class="product-card">
-    <a href="./products.html#${data[i].id}">
+    <a href="${checkLogin("products")}#${data[i].id}">
       <img
         src= ${data[i].background_image}
         alt=""
@@ -79,7 +79,7 @@ function showRcmGames(data) {
       
     </a>
       <div class="product-info">
-        <a href="./products.html#${data[i].id}">
+      <a href="${checkLogin("products")}#${data[i].id}">
         <div class="info-name-price">
           <h5>${data[i].name}</h5>
         </div>
@@ -105,7 +105,7 @@ function showHotGames(data) {
     hotContainer.innerHTML +=
     `<div class="col-md-3 col-sm-6 col-12">
     <div class="product-card">
-    <a href="./products.html#${data[i].id}">
+    <a href="${checkLogin("products")}#${data[i].id}">
       <img
         src= ${data[i].background_image}
         alt=""
@@ -113,7 +113,7 @@ function showHotGames(data) {
       
     </a>
       <div class="product-info">
-        <a href="./products.html#${data[i].id}">
+      <a href="${checkLogin("products")}#${data[i].id}">
         <div class="info-name-price">
           <h5>${data[i].name}</h5>
         </div>
@@ -247,3 +247,36 @@ function addToCart() {
   })
 }
 // click add to cart icon end
+
+
+//  login logic
+// console.log(window.location.search.split("=")[1]);
+function checkLogin(page) {
+  let uid = window.location.search.split("=")[1];
+  if(!uid) {
+    return "./login.html"
+  }
+  else {
+    return `./${page}.html?user=${uid}`
+  }
+}
+
+// nav_bar 
+const navBarArea = document.querySelectorAll(".nav-bar div button")
+navBarArea.forEach(nav => {
+  nav.addEventListener("click", (e) => {
+    window.location.assign(`${checkLogin(nav.value)}`)
+  })
+})
+
+// banner click
+const rcmBanner = document.querySelector(".rcm-banner")
+const hotGameBanner = document.querySelector(".hot-game-banner")
+
+function bannerClick(name,page) {
+  name.addEventListener("click", (e) => {
+    window.location.assign(`${checkLogin(page)}`)
+  })
+}
+bannerClick(rcmBanner, "allgames")
+bannerClick(hotGameBanner,"allgames")

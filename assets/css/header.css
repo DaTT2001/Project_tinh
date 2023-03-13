@@ -85,8 +85,9 @@
 .nav-bar {
     height: 50px;
 }
-.nav-bar > div > a {
-    text-decoration: none;
+.nav-bar > div > button {
+    background: none;
+    border: none;
     font-size: 15px;
     color: white;
     font-weight: 500;
@@ -94,7 +95,7 @@
     padding: 0 20px;
     line-height: 50px;
 }
-.nav-bar > div > a:hover {
+.nav-bar > div > button:hover {
     background-color: #1F0A4E;
     color: #FAD318;
 }

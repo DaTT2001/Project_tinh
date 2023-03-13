@@ -53,7 +53,7 @@ body {
     margin-bottom: 24px;
 }
 .rcm-banner {
-    position: relative;
+    cursor: pointer;
 }
 .rcm-banner img:hover {
     opacity: 0.8;
@@ -178,30 +178,12 @@ body {
 
 .hot-game-banner {
     /* margin-top: 12px; */
-    position: relative;
+    cursor: pointer;
 }
 .hot-game-banner img:hover {
     opacity: 0.8;
 }
-/* .hot-game-banner button {
-    position: absolute;
-    width: 150px;
-    height: 40px;
-    right: 5%;
-    top: 50%;
-    transform: translate(0%, -50%);
-    font-weight: 600;
-    font-size: 18px;
-    cursor: pointer;
-    background-color: #e0cfff;
-} */
-/* .hot-game-banner button a {
-    text-decoration: none;
-    color: black;
-}
-.hot-game-banner button:hover {
-    background-color: #dba0f5;
-} */
+
 /* hot game banner end */
 
 /* coming soon banner start */

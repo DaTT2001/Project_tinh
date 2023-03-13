@@ -30,6 +30,7 @@ async function getGame(url) {
     `
     showMoreDetails(data)
     showRequirement(data)
+    showDescription(data)
 }
 getGame(API_GAME)
 function getClassByRate(rating) {
@@ -318,3 +319,9 @@ function showMoreDescription() {
 }
 
 showMoreDescription()
+function showDescription(data) {
+    const desContentArea = document.querySelector(".description-content")
+    desContentArea.innerHTML = `
+      ${data.description}
+    `
+}

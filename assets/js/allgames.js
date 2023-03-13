@@ -66,7 +66,8 @@ function showGameList(data) {
             <div class="product-overview">
             <p>Genres: ${showGenre(data[i].genres)}</p>
             <div class="platforms-icon">${showPlatforms(data[i].platforms)}  
-          </div>
+            <span class="add-to-cart"><i class="bi bi-heart"></i></span>
+            </div>
           
           </div>
         </div>`

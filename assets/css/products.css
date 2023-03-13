@@ -1,0 +1,230 @@
+body {
+    background-color: #4618AC !important;
+    color: white;
+}
+/* product - card -start */
+.content {
+    margin-top: 50px;
+    background-color: #4618AC;
+}
+.product-img img {
+    height: 320px;
+    object-fit: cover;
+}
+.product-info {
+    color: white;
+}
+.rating-star {
+    color: #FAD318;
+}
+.rating-count {
+    font-size: 12px;
+}
+.product-genres span {
+    font-size: 12px;
+    background: rgba(0,0,0,.3);
+    color: #ada1c8;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 2px 8px;
+    font-weight: 600;
+}
+.product-redeem {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.product-redeem p {
+    margin: 0;
+}
+.product-redeem-item {
+    width: 30%;
+}
+.product-redeem-item i {
+    font-size: 30px;
+}
+.product-redeem-item p {
+    font-size: 12px;
+    color: #B198D9;
+}
+.product-redeem-item p span {
+    color: #FAD318;
+}
+.developers-product {
+    font-size: 12px;
+}
+.product-platforms i {
+    font-size: 30px;
+}
+.product-platforms span  {
+    font-size: 12px;
+}
+.product-rating {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(124, 252, 0 ,0.5);
+    border-radius: 5px;
+}
+.product-rating.blue {
+    border: 1px solid rgba(124, 252, 0 ,0.5);
+    color: 	#7CFC00;
+}
+.product-rating.red {
+    border: 1px solid rgba(255, 0, 0,0.5) ;
+    color: red;
+
+}
+.product-rating.orange {
+    border: 1px solid rgba(242, 121, 53, 0.5);
+    color: orange;
+}
+.product-rating.yellow {
+    border: 1px solid 	rgba(255,255,0, 0.5);
+    color: yellow;
+}
+.product-rating span {
+    font-size: 18px;
+    font-weight: 600;
+}
+/* product card end */
+
+
+/* offer container start */
+.offer-container {
+    width: 100%;
+    height: 200px;
+    box-shadow: 0 3px 9px 0 rgb(0 0 0 / 26%);
+    background: #5825cc
+}
+.offer-header {
+color: #fad318;
+background-color: #3e1597;
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 100%;
+    height: 30px ;
+    font-weight: 600;
+}
+.offer-content {
+    padding: 20px;
+    height: 170px;
+}
+.offer-content h3 {
+    color: white;
+}
+.offer-content h3 span {
+    color: #B198D9;
+    font-size: 12px;
+}
+.buy-btn, .wish-btn {
+    border: none;
+    font-weight: 600;
+    height: 35px;
+}
+.buy-btn {
+    background-color: #fad318;
+    color: #000;
+}
+.wish-btn {
+    background-color: rgba(0,0,0,0);
+    border: 1px solid;
+    color: #fff;
+}
+.buy-btn:hover {
+    background-color: #f5a623;
+}
+.wish-btn:hover {
+    background-color: rgba(0,0,0,.3);
+    border-color: #fad318;
+}
+.share {
+    margin: 10px 0;
+    /* font-size: 12px; */
+    color: white;
+}
+.paper-clip {
+    transform: rotate(30deg);
+}
+
+
+
+/* slider */
+.slider {
+    margin-top: 20px;
+    padding-top: 20px;
+    color: white;
+    background-color: #311178;
+    padding-bottom: 20px;
+}
+.more-details { 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.more-details p {
+    margin: 0;
+}
+.more-details li:first-child {
+    margin-bottom: 1rem;
+    height: 100%;
+    border-bottom: 1px solid #ccc;
+    text-transform: uppercase;
+}
+.more-details li:not(:first-child) {
+    font-size: 14px ;
+    margin-bottom: 10px;
+}
+.more-details li:not(:first-child) p{
+    display: inline-block;
+    width: 30%;
+    border-right: 1px solid #ccc;
+}
+.more-details li:not(:first-child) span {
+    color: #B198D9;
+}
+
+/* requirement */
+.requirement {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.minimum {
+    border-right: 1px solid #ccc;
+}
+.minimum ,.recommended {
+    font-size: 14px;
+}
+.minimum p:first-child, .recommended p:first-child {
+    color:#fad318 ;
+    margin: 0;
+}
+
+
+
+/* description */
+.description {
+    background-color: #311178;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.description p {
+    font-size: 14px;
+}
+.description-content {
+    color: #ccc;
+    max-height: 100px;
+    overflow: hidden;
+    transition: max-height 0s ease 0s;
+}
+.description-content.active {
+    color: white;
+    background: #311178;
+    max-height: 100%;
+    transition: max-height 0.8s ease 0s;
+}
+#show-more-description {
+    border: none;
+    background-color: #311178;
+    padding: 0;
+    color: #f5a623;
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- import owlcarousel -->
+    <link
+      rel="stylesheet"
+      href="./lib/owlcarousel/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./lib/owlcarousel/assets/owl.theme.default.min.css"
+    />
+    <!-- import owcarousel end -->
+
+    <!-- import boostrap and boostrap icon -->
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <!-- import boostrap end -->
+    <!-- import my css -->
+    <link rel="stylesheet" href="./assets/css/allgames.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <title>All games</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-top-bar">
+        <div class="container">
+          <div class="row top-bar">
+            <div
+              class="col-md-2 d-flex align-items-center justify-content-start"
+            >
+              <a href="./index.html">
+                <img src="./assets/images/logo1.png" width="140px" alt="" />
+              </a>
+            </div>
+            <div
+              class="col-md-7 d-flex align-items-center justify-content-start"
+            >
+              <form class="search-input-container">
+                <input class="search-input" name="search_input" type="text" />
+                <button><i class="bi bi-search"></i></button>
+                <div class="search-result-area"></div>
+              </form>
+            </div>
+            <div
+              class="col-md-3 d-flex align-items-center justify-content-end gap-4 function-btn"
+            >
+              <!-- <a href="" class="bi bi-heart func-icon"></a> -->
+              <a href="" class="bi bi-cart3 func-icon"></a>
+              <div class="user-login">
+                <a class="person-login" href="./login.html">
+                  <i class="bi bi-person"> </i>
+                  <p>Login</p>
+                </a>
+                <span>|</span>
+                <a href="./signup.html">Register</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- top bar end -->
+
+      <!-- nav bar start -->
+      <div class="header-nav-bar">
+        <div class="container">
+          <div class="row nav-bar">
+            <div
+              class="col-md-12 d-flex align-items-center justify-content-start"
+            >
+              <a href="./allgames.html">ALL GAMES</a>
+              <a href="">HOT DEALS</a>
+              <a href="">COMING SOON</a>
+              <a href="">NEWS</a>
+              <a href="">COMMUNITY</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- nav bar end -->
+    </div>
+    <!-- header end -->
+
+    <!-- product list start -->
+    <div class="products-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="filter-table">
+              <form id="formElement">
+                <div class="filter-search">
+                  <label for="product-search">Product name</label>
+                  <input type="text" name="product_name" id="product-name" />
+                </div>
+                <div class="type">
+                  <span>Select Type</span>
+                  <label for="action-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="action-checkbox"
+                      name="genres"
+                      value="action"
+                    />
+                    Action</label
+                  >
+                  <!-- <br /> -->
+                  <label for="adventure-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="adventure-checkbox"
+                      name="genres"
+                      value="adventure"
+                    />
+                    Adventure</label
+                  >
+                  <!-- <br /> -->
+                  <label for="casual-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="casual-checkbox"
+                      name="genres"
+                      value="casual"
+                    />
+                    Casual</label
+                  >
+                  <!-- <br /> -->
+                  <label for="indie-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="indie-checkbox"
+                      name="genres"
+                      value="indie"
+                    />
+                    Indie</label
+                  >
+                  <!-- <br /> -->
+                  <label for="multiplayer-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="multiplayer-checkbox"
+                      name="genres"
+                      value="massively-multiplayer"
+                    />
+                    Massively Multiplayer</label
+                  >
+                  <!-- <br /> -->
+                  <label for="racing-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="racing-checkbox"
+                      name="genres"
+                      value="racing"
+                    />
+                    Racing</label
+                  >
+                  <!-- <br /> -->
+                  <label for="rpg-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="rpg-checkbox"
+                      name="genres"
+                      value="role-playing-games"
+                    />
+                    RPG</label
+                  >
+                  <!-- <br /> -->
+                  <label for="simulation-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="simulation-checkbox"
+                      name="genres"
+                      value="simulation"
+                    />
+                    Simulation</label
+                  >
+                  <!-- <br /> -->
+                  <label for="sports-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="sports-checkbox"
+                      name="genres"
+                      value="sports"
+                    />
+                    Sports</label
+                  >
+                  <!-- <br /> -->
+                  <label for="strategy-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="strategy-checkbox"
+                      name="genres"
+                      value="strategy"
+                    />
+                    Strategy</label
+                  >
+                  <!-- <br /> -->
+                  <label for="puzzle-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="puzzle-checkbox"
+                      name="genres"
+                      value="puzzle"
+                    />
+                    Puzzle</label
+                  >
+                  <!-- <br /> -->
+                  <label for="platformer-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="platformer-checkbox"
+                      name="genres"
+                      value="platformer"
+                    />
+                    Platformer</label
+                  >
+                  <!-- <br /> -->
+                  <label for="fighting-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="fighting-checkbox"
+                      name="genres"
+                      value="fighting"
+                    />
+                    Fighting</label
+                  >
+                  <!-- <br /> -->
+                  <label for="shooter-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="shooter-checkbox"
+                      name="genres"
+                      value="shooter"
+                    />
+                    Shooter</label
+                  >
+                  <!-- <br /> -->
+                  <label for="horror-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="horror-checkbox"
+                      name="genres"
+                      value="horror"
+                    />
+                    Horror</label
+                  >
+                  <!-- <br /> -->
+                  <label for="music-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="music-checkbox"
+                      name="genres"
+                      value="music"
+                    />
+                    Music</label
+                  >
+                  <!-- <br /> -->
+                  <label for="educational-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="educational-checkbox"
+                      name="genres"
+                      value="educational"
+                    />
+                    Educational</label
+                  >
+                  <!-- <br /> -->
+                </div> 
+                <div class="platforms">
+                  <span>Select platforms</span>
+                  <label for="Windows-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="Windows-checkbox"
+                      name="platforms"
+                      value="4"
+                    />
+                    Windows</label
+                  >
+                  <label for="Nintendo-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="Nintendo-checkbox"
+                      name="platforms"
+                      value="8"
+                    />
+                    Nintendo</label
+                  >
+                  <label for="PS4-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="PS4-checkbox"
+                      name="platforms"
+                      value="9"
+                    />
+                    Play Station 4</label
+                  >
+                  <label for="PS5-checkbox"
+                    ><input
+                      type="checkbox"
+                      id="PS5-checkbox"
+                      name="platforms"
+                      value="187"
+                    />
+                    PS5</label
+                  >
+                </div>
+                <div class="released">
+                    <span>Release date</span>
+                    <div>
+                        <input type="date" name="release_start">
+                        <span>-</span>
+                        <input type="date" name="release_end">
+                    </div>
+                    
+                </div>
+                <div class="metacritic">
+                    <span>Metacritic</span>
+                    <div>
+                        <input type="number" name="metacritic_start" value="1" min="1" max="99" onblur="checkInput(this)" >
+                        <span>-</span>
+                    <input type="number" name="metacritic_end" value="99" min="1" max="99" onblur="checkInput(this)">
+                    </div>
+                    
+                </div>
+            </form>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="row count-order">
+              <div class="col-md d-flex align-items-center">
+              <div class="count-result">Result found: <span></span></div> 
+              </div>
+              <div class="col-md">
+                <div class="order-type d-flex justify-content-end">
+                  <span><i class="bi bi-list-check"></i> </span>
+                  <select id="my-select-order">
+                    <option value="-rating">Price: High to Low</option>
+                    <option value="rating">Price: Low to High</option>
+                    <option value="name">Alpabet: A-Z</option>
+                    <option value="-name">Alpabet: Z-A</option>
+                    <option value="-released">Released: Newest to Oldest</option>
+                    <option value="released">Released: Oldest to Newest</option>
+                  </select>
+                </div> 
+              </div>
+            </div>
+            <div class="row product-card-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- import jquery -->
+    <script src="./lib/jquery-3.6.3.min.js"></script>
+    <!-- import boostrap js -->
+    <script src="./lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- import my js -->
+    <script src="./assets/js/allgames.js"></script>
+  </body>
+</html>

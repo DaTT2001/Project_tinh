@@ -365,3 +365,7 @@ background-color: #3e1597;
     font-size: 18px;
     font-weight: 600;
 }
+.screenshots-item {
+    height: 130px;
+    object-fit: cover;
+}

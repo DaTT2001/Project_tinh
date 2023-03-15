@@ -45,14 +45,14 @@
             <div
               class="col-md-2 d-flex align-items-center justify-content-start"
             >
-              <img src="./assets/images/logo1.png" width="140px" alt="" />
+              <img class="logo" src="./assets/images/logo1.png" width="140px" alt="" />
             </div>
             <div
               class="col-md-7 d-flex align-items-center justify-content-start"
             >
-              <form class="search-input-container">
+              <form class="search-input-container" onsubmit="redirectToAllProduct()">
                 <input class="search-input" name="search_input" type="text" />
-                <button><i class="bi bi-search"></i></button>
+                <button type="submit"><i class="bi bi-search"></i></button>
                 <div class="search-result-area">
                 </div>
               </form>
@@ -272,6 +272,7 @@
     <!-- import boostrap end -->
     <!-- import my js -->
     <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/navbar.js"></script>
     <!-- import my js end -->
   </body>
 </html>

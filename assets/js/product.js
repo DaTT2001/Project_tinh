@@ -201,7 +201,7 @@ async function getScreenshots(url) {
     const slider = document.querySelector(".owl-carousel") 
     slider.innerHTML = ""
     data.results.forEach(img => {
-        slider.innerHTML += `<div><img src="${img.image}" width="100%"></div>`
+        slider.innerHTML += `<div><img class="screenshots-item" src="${img.image}" width="100%"></div>`
     });
     $(document).ready(function () {
         $(".owl-carousel").owlCarousel({

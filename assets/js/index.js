@@ -21,13 +21,9 @@ $(document).ready(function () {
 });
 
 //dom
-const user = document.querySelector(".user-login");
-let uid = location.search.slice(5);
 const rcmContainer = document.querySelector(".rcm-product-card-container")
 const hotContainer = document.querySelector(".hot-game-container")
 const productCard = document.querySelector(".product-card")
-const searchInput = document.querySelector(".search-input-container")
-const searchResultArea = document.querySelector(".search-result-area")
 
 
 //khai bao platform
@@ -43,27 +39,6 @@ const API_GAME = `https://rawg.io/api/games?token&key=26b25919da7f43a3a316e35eb4
 
 
 
-
-
-async function getUID(url) {
-  const res = await fetch(url);
-  const data = await res.json();
-  const userData = data[`${uid}`];
-  user.innerHTML = `
-            <a class="nav-link dropdown-toggle person-login person-setting d-flex" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-person"> </i>
-                <p>${userData.username}</p>
-            </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#user-uid-${uid}">My profile</a></li>
-                <li><a class="dropdown-item" href="#user-uid-${uid}">Cart</a></li>
-                <li><a class="dropdown-item" href="#user-uid-${uid}">Favourites</a></li>
-                <li><a class="dropdown-item" href="#user-uid-${uid}">Order History</a></li>
-              </ul>
-        `;
-
-  // fetch("https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/users.json")
-}
 function showRcmGames(data) {
   rcmContainer.innerHTML = ""
   console.log(data);
@@ -94,7 +69,6 @@ function showRcmGames(data) {
       <div class="platforms-icon">${showPlatforms(data[i].platforms)}  
       <span class="add-to-cart"><i class="bi bi-heart"></i></span>
     </div>
-    
     </div>
   </div>`
   }
@@ -110,7 +84,6 @@ function showHotGames(data) {
         src= ${data[i].background_image}
         alt=""
       />
-      
     </a>
       <div class="product-info">
       <a href="${checkLogin("products")}#${data[i].id}">
@@ -129,7 +102,6 @@ function showHotGames(data) {
       <div class="platforms-icon">${showPlatforms(data[i].platforms)}  
       <span class="add-to-cart"><i class="bi bi-heart"></i></span>
       </div>
-    
     </div>
   </div>`
   }
@@ -201,40 +173,7 @@ function showPlatforms(platform) {
   }
   return platFormIcon
 }
-async function getSearch(url) {
-  const res = await fetch(url);
-  const data = await res.json();
-  console.log(data.results);
-  getSearchResult(data.results)
-}
 
-function search() {
-  searchInput.addEventListener("input", (e) => {
-      e.preventDefault()
-      const formData = new FormData(searchInput)
-      const data = Object.fromEntries(formData);
-      getSearch(API_GAME+`&search=${data.search_input}`)
-    }  
-  )
-}
-function getSearchResult(data) {
-  const formData1 = new FormData(searchInput)
-  const data1 = Object.fromEntries(formData1);
-  searchResultArea.innerHTML = ""
-  for(let i = 0; i < data.length; i++) {
-    searchResultArea.innerHTML += `
-      <p>${data[i].name}</p>
-    `
-    if(i == 5) {
-      break
-    }
-  }
-  if(data1.search_input.trim() === "") {
-    searchResultArea.innerHTML = ""
-  }
-}
-search()
-getUID(API_FIREBASE)
 getGames(API_GAME)
 
 // event click add-to-cart-icon start
@@ -248,26 +187,6 @@ function addToCart() {
 }
 // click add to cart icon end
 
-
-//  login logic
-// console.log(window.location.search.split("=")[1]);
-function checkLogin(page) {
-  let uid = window.location.search.split("=")[1];
-  if(!uid) {
-    return "./login.html"
-  }
-  else {
-    return `./${page}.html?user=${uid}`
-  }
-}
-
-// nav_bar 
-const navBarArea = document.querySelectorAll(".nav-bar div button")
-navBarArea.forEach(nav => {
-  nav.addEventListener("click", (e) => {
-    window.location.assign(`${checkLogin(nav.value)}`)
-  })
-})
 
 // banner click
 const rcmBanner = document.querySelector(".rcm-banner")

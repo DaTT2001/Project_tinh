@@ -135,7 +135,7 @@ async function getGames(url) {
     resultFound.textContent = `${data.count}`
 }
 getGames(API_GAME +`&ordering=${selectArea.value}`)
-function search() {
+function searchListGames() {
     selectArea.addEventListener("change", (e) => {
       const genres = getGenres(checkBoxes)
       getGames(API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
@@ -160,11 +160,6 @@ function search() {
         getGames(API_GAME + genres + `&search=${getProductName()}`+ getReleased(releaseDate) + getMetacritic(metacriticArr) + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`)
       })
     })
-    // checkBoxes.addEventListener("change", (e) => {
-    //     const genres = getGenres(checkBoxes)
-    //     getGames(API_GAME + genres + `&search=${getProductName()}`+ getReleased(releaseDate) + getMetacritic(metacriticArr)  )
-    //   }  
-    // )
     metacriticArr[0].addEventListener("input", (e) => {
         const genres = getGenres(checkBoxes)
         getGames(API_GAME + genres + `&search=${getProductName()}`+ getReleased(releaseDate) + getMetacritic(metacriticArr) + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`)
@@ -239,36 +234,4 @@ function getPlatforms(platforms) {
   })
   return selectedPlatforms.join("")
 }
-search()
-
-
-//  login logic
-function checkLogin(page) {
-  let uid = window.location.search.split("=")[1];
-  if(!uid) {
-    return "./login.html"
-  }
-  else {
-    return `./${page}.html?${uid}`
-  }
-}
-console.log(window.location.search.split("=")[1]);
-// nav_bar 
-const navBarArea = document.querySelectorAll(".nav-bar div button")
-navBarArea.forEach(nav => {
-  nav.addEventListener("click", (e) => {
-    window.location.assign(`${checkLogin(nav.value)}`)
-  })
-})
-
-// banner click
-const rcmBanner = document.querySelector(".rcm-banner")
-const hotGameBanner = document.querySelector(".hot-game-banner")
-
-function bannerClick(name,page) {
-  name.addEventListener("click", (e) => {
-    window.location.assign(`${checkLogin(page)}`)
-  })
-}
-bannerClick(rcmBanner, "allgames")
-bannerClick(hotGameBanner,"allgames")
+searchListGames()

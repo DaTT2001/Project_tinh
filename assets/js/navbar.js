@@ -2,6 +2,7 @@ const navBarArea = document.querySelectorAll(".nav-bar div button")
 const logo = document.querySelector(".logo")
 let uid = location.search.slice(6);
 const user = document.querySelector(".user-login");
+const API_RAWG = `https://rawg.io/api/games?token&key=26b25919da7f43a3a316e35eb4124cc4&platforms=187,4,9,18&stores=1`;
 
 
 
@@ -67,7 +68,7 @@ function search() {
         e.preventDefault()
         const formData = new FormData(searchInput)
         const data = Object.fromEntries(formData);
-        getSearch(API_GAME+`&search=${data.search_input}`)
+        getSearch(API+`&search=${data.search_input}`)
       }  
     )
 }

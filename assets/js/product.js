@@ -6,6 +6,7 @@ const API_FIREBASE = "https://main-project-28ab6-default-rtdb.asia-southeast1.fi
 const API_GAME = `https://rawg.io/api/games/${location.hash.slice(1)}?token&key=26b25919da7f43a3a316e35eb4124cc4&/`;
 const API_IMG = `https://rawg.io/api/games/${location.hash.slice(1)}/screenshots?token&key=26b25919da7f43a3a316e35eb4124cc4&/`
 
+const product_id = location.hash.slice(1)
 //khai bao platform
 const PC = 4
 const NINTENDO = 18
@@ -198,13 +199,13 @@ function getPrice(rating) {
 async function getScreenshots(url) {
     const res = await fetch(url)
     const data = await res.json()
-    const slider = document.querySelector(".owl-carousel") 
+    const slider = document.querySelector(".slider .owl-carousel") 
     slider.innerHTML = ""
     data.results.forEach(img => {
         slider.innerHTML += `<div><img class="screenshots-item" src="${img.image}" width="100%"></div>`
     });
     $(document).ready(function () {
-        $(".owl-carousel").owlCarousel({
+        $(".screenshots-item-slider").owlCarousel({
           loop: true,
           margin: 10,
           nav: false,
@@ -325,3 +326,220 @@ function showDescription(data) {
       ${data.description}
     `
 }
+
+async function showLikeProduct(url) {
+    const res = await fetch(url)
+    const data1 = await res.json()
+    const data = data1.results
+    const alsoLike = document.querySelector(".also-like .container .row .owl-carousel")
+    alsoLike.innerHTML = ""
+    console.log(data);
+    for(let i = 0; i < 20; i++) {
+        alsoLike.innerHTML += `
+    <div class="product-card">
+    <a href="${checkLogin("products")}#${data[i].id}">
+      <img
+        src= ${data[i].background_image}
+        alt=""
+      />
+    </a>
+      <div class="product-info">
+      <a href="${checkLogin("products")}#${data[i].id}">
+        <div class="info-name-price">
+          <h6>${data[i].name}</h6>
+        </div>
+        <div class="price-rating d-flex justify-content-between align-items-center">
+        <h6>Price: <span>€${getPrice1(data[i])}</span></h6>
+        <div class="product-rating ${getClassByRate(metacriticRate(data[i].metacritic))} d-flex align-items-center justify-content-center"><span ${getClassByRate(metacriticRate(data[i].metacritic))}>${metacriticRate(data[i].metacritic)}</span></div>
+        </div>
+        
+        </a>
+      </div>
+      <div class="product-overview">
+      <p>Genres: ${showGenre(data[i].genres)}</p>
+      <div class="platforms-icon">${showPlatforms(data[i].platforms)}  
+      <span class="add-to-cart"><i class="bi bi-heart"></i></span>
+      </div>
+    </div>
+    `
+    }
+    $(document).ready(function () {
+        $(".also-like-slider").owlCarousel({
+          loop: true,
+          margin: 10,
+          nav: false,
+          dots: false,
+          autoplay: true,
+          autoplayTimeout: 3500,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 3,
+            },
+            1000: {
+              items: 5,
+            },
+          },
+        });
+      });
+}
+showLikeProduct(`https://rawg.io/api/games?token&key=26b25919da7f43a3a316e35eb4124cc4&platforms=187,4,9,18&stores=1`)
+function getPrice1(id) {
+    if(id.rating === 0) {
+        return 0.99
+      }
+      return Math.round((id.rating) * 300)/100
+  } 
+  function metacriticRate(metacritic) {
+    if(!metacritic) {
+      return 0
+    }
+    return metacritic
+  } 
+  function showGenre(genres) {
+    let result = ''
+    for(let i = 0; i < genres.length - 1; i++) {
+      result = result + genres[i].name + ", "
+    }
+    result = result + genres[genres.length - 1].name + "."
+    return result
+  }
+  function showPlatforms(platform) {
+    let platFormIcon = ''
+    const result = []
+    for(let i = 0; i < platform.length; i++) {
+      result.push(platform[i].platform.id)
+    }
+    if(result.includes(PC)) {
+      platFormIcon += 
+      `
+      <i class="bi bi-windows"></i>
+      `
+    }
+    if(result.includes(NINTENDO)) {
+      platFormIcon += 
+      `
+      <i class="bi bi-nintendo-switch"></i>
+      `
+    }
+    if(result.includes(PS4) || result.includes(PS5)) {
+      platFormIcon += 
+      `
+      <i class="bi bi-playstation"></i>
+      `
+    }
+    return platFormIcon
+  }
+  function getClassByRate(rating) {
+    if(rating >= 80) {
+      return "blue"
+    }
+    else if(rating < 80 && rating >=60) {
+      return "yellow"
+    }
+    else if(rating < 60 && rating >=40) {
+      return "orange"
+    }
+    else {
+      return "red"
+    }
+  } 
+  
+//   requirement end
+
+
+
+// write comment
+async function writeReview(url) {
+    const writeArea = document.querySelector(".review-container")
+    const reviewForm = document.getElementById("review")
+    const res = await fetch(url);
+    const data = await res.json();
+    const userData = data[`${uid}`];
+    reviewForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        const formData = new FormData(reviewForm)
+        const data = Object.fromEntries(formData)
+        let d = new Date()
+        let date = (d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
+        writeArea.innerHTML += `
+        <li class="review-item">
+        <div class="review-item-name">
+          <div class="review-item-star d-flex align-items-center">
+            <span>
+                ${createStar(data.star)}
+            </span>           
+            <h6>${userData.username}</h6>
+            <span>${date}</span>
+          </div>
+          <div class="review-icon">
+            <i class="bi bi-hand-thumbs-up"></i>
+            <i class="bi bi-hand-thumbs-down"></i>
+          </div>
+        </div>
+        <div class="review-item-content">
+          ${data.review_text}
+        </div>
+      </li>
+        `
+        const star = data.star
+        const username = userData.username
+        const comment = data.review_text
+        const newComment = {product_id, date, comment, username, star}
+        postNewComment(newComment)
+    })
+}
+function createStar(star) {
+    let result = ""
+    for(let i = 0; i < star; i++) {
+        result += `
+        <i class="bi bi-star-fill"></i>
+        `
+    }
+    return result
+}
+writeReview(API_FIREBASE)
+
+function postNewComment(comment) {
+    fetch("https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/comment.json", {
+      method: "POST",
+      body: JSON.stringify(comment),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+}
+async function getComment(url) {
+    const res =  await fetch(url)
+    const data =  await res.json()
+    const writeArea = document.querySelector(".review-container")
+    for(const key in data) {
+        const value =  data[key]
+        if(value.product_id == product_id) {
+            writeArea.innerHTML += `
+            <li class="review-item">
+            <div class="review-item-name">
+              <div class="review-item-star d-flex align-items-center">
+                <span>
+                    ${createStar(value.star)}
+                </span>           
+                <h6>${value.username}</h6>
+                <span>${value.date}</span>
+              </div>
+              <div class="review-icon">
+                <i class="bi bi-hand-thumbs-up"></i>
+                <i class="bi bi-hand-thumbs-down"></i>
+              </div>
+            </div>
+            <div class="review-item-content">
+              ${value.comment}
+            </div>
+          </li>
+            `
+        }
+    }
+}
+
+getComment("https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/comment.json")

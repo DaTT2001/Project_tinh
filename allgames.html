@@ -25,6 +25,7 @@
     <!-- import my css -->
     <link rel="stylesheet" href="./assets/css/allgames.css" />
     <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/toast.css" />
     <title>All games</title>
   </head>
 
@@ -37,7 +38,12 @@
               class="col-md-2 d-flex align-items-center justify-content-start"
             >
               <a>
-                <img class="logo" src="./assets/images/logo1.png" width="140px" alt="" />
+                <img
+                  class="logo"
+                  src="./assets/images/logo1.png"
+                  width="140px"
+                  alt=""
+                />
               </a>
             </div>
             <div
@@ -53,7 +59,9 @@
               class="col-md-3 d-flex align-items-center justify-content-end gap-4 function-btn"
             >
               <!-- <a href="" class="bi bi-heart func-icon"></a> -->
-              <a href="" class="bi bi-cart3 func-icon"></a>
+              <a href="" class="bi bi-cart3 func-icon cart-icon">
+                <p class="cart-count"></p>
+              </a>
               <div class="user-login">
                 <a class="person-login" href="./login.html">
                   <i class="bi bi-person"> </i>
@@ -75,11 +83,11 @@
             <div
               class="col-md-12 d-flex align-items-center justify-content-start"
             >
-            <button value="allgames">ALL GAMES</button>
-            <button value="news">NEWS</button>
-            <button value="community">COMMUNITY</button>
-            <button value="hotdeals">HOT DEALS</button>
-            <button value="aboutus">ABOUT US</button>
+              <button value="allgames">ALL GAMES</button>
+              <button value="news">NEWS</button>
+              <button value="community">COMMUNITY</button>
+              <button value="hotdeals">HOT DEALS</button>
+              <button value="aboutus">ABOUT US</button>
             </div>
           </div>
         </div>
@@ -271,7 +279,7 @@
                     Educational</label
                   >
                   <!-- <br /> -->
-                </div> 
+                </div>
                 <div class="platforms">
                   <span>Select platforms</span>
                   <label for="Windows-checkbox"
@@ -312,30 +320,42 @@
                   >
                 </div>
                 <div class="released">
-                    <span>Release date</span>
-                    <div>
-                        <input type="date" name="release_start">
-                        <span>-</span>
-                        <input type="date" name="release_end">
-                    </div>
-                    
+                  <span>Release date</span>
+                  <div>
+                    <input type="date" name="release_start" />
+                    <span>-</span>
+                    <input type="date" name="release_end" />
+                  </div>
                 </div>
                 <div class="metacritic">
-                    <span>Metacritic</span>
-                    <div>
-                        <input type="number" name="metacritic_start" value="1" min="1" max="99" onblur="checkInput(this)" >
-                        <span>-</span>
-                    <input type="number" name="metacritic_end" value="99" min="1" max="99" onblur="checkInput(this)">
-                    </div>
-                    
+                  <span>Metacritic</span>
+                  <div>
+                    <input
+                      type="number"
+                      name="metacritic_start"
+                      value="1"
+                      min="1"
+                      max="99"
+                      onblur="checkInput(this)"
+                    />
+                    <span>-</span>
+                    <input
+                      type="number"
+                      name="metacritic_end"
+                      value="99"
+                      min="1"
+                      max="99"
+                      onblur="checkInput(this)"
+                    />
+                  </div>
                 </div>
-            </form>
+              </form>
             </div>
           </div>
           <div class="col-md-9">
             <div class="row count-order">
               <div class="col-md d-flex align-items-center">
-              <div class="count-result">Result found: <span></span></div> 
+                <div class="count-result">Result found: <span></span></div>
               </div>
               <div class="col-md">
                 <div class="order-type d-flex justify-content-end">
@@ -348,7 +368,7 @@
                     <option value="-released">Released: New to Old</option>
                     <option value="released">Released: Old to New</option>
                   </select>
-                </div> 
+                </div>
               </div>
             </div>
             <div class="row product-card-container"></div>
@@ -356,7 +376,19 @@
         </div>
       </div>
     </div>
-
+    <div
+      class="toast"
+      id="EpicToast"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      style="position: fixed; top: 20px; right: 20px"
+    >
+      <div class="toast-header">
+        <strong class="mr-auto">GREAT!!!</strong>
+      </div>
+      <div class="toast-body">Add to cart complete!. Buy now :></div>
+    </div>
     <!-- import jquery -->
     <script src="./lib/jquery-3.6.3.min.js"></script>
     <!-- import boostrap js -->

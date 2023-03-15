@@ -112,3 +112,17 @@
     background-color: #ccc;
     cursor: pointer;
 }
+.cart-count {
+    position: absolute;
+    margin: 0;
+    font-size: 12px;
+    padding: 10%;
+    top: 0px;
+    right: -20%;
+    background-color: red;
+    border-radius: 50px;
+    opacity: 0.6;
+}
+.cart-icon {
+    position: relative;
+}

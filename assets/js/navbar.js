@@ -96,3 +96,18 @@ searchInput.addEventListener("submit", (e) => {
     e.preventDefault()
     window.location.assign(`${checkLogin("allgames")}`)
 })
+
+
+
+// cart count
+async function getCartCount() {
+  const res =  await fetch(`https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/users/${uid}/carts.json`)
+  const data =  await res.json()
+  let i = 0
+  for(let key in data) {
+    i++
+  }
+  const cartCount = document.querySelector(".cart-count")
+  cartCount.textContent = i 
+}
+getCartCount()

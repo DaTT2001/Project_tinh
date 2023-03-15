@@ -455,6 +455,8 @@ function getPrice1(id) {
 async function writeReview(url) {
     const writeArea = document.querySelector(".review-container")
     const reviewForm = document.getElementById("review")
+    const reviewTextArea = document.getElementById("review_text")
+    const reviewTextErr = document.querySelector(".text-area-err")
     const res = await fetch(url);
     const data = await res.json();
     const userData = data[`${uid}`];
@@ -464,7 +466,11 @@ async function writeReview(url) {
         const data = Object.fromEntries(formData)
         let d = new Date()
         let date = (d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
-        writeArea.innerHTML += `
+        if(!data.review_text.trim()) {
+            reviewTextErr.classList.add("active")
+        }
+        else {
+            writeArea.innerHTML += `
         <li class="review-item">
         <div class="review-item-name">
           <div class="review-item-star d-flex align-items-center">
@@ -489,19 +495,67 @@ async function writeReview(url) {
         const comment = data.review_text
         const newComment = {product_id, date, comment, username, star}
         postNewComment(newComment)
+        reviewTextArea.value = ""
+        }
+        reviewTextArea.addEventListener("focus", (e) => {
+            reviewTextErr.classList.remove("active")
+        })
+        
     })
 }
 function createStar(star) {
     let result = ""
-    for(let i = 0; i < star; i++) {
-        result += `
-        <i class="bi bi-star-fill"></i>
-        `
+    switch(Number(star)) {
+        case 1:
+            result = `
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>    
+            `
+            break
+        case 2:
+            result = `
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>   
+            `
+            break
+        case 3:
+            result = `
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>   
+            `
+            break
+        case 4:
+            result = `
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill"></i>   
+            `
+            break
+        case 5:
+            result = `
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill active "></i>
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill active"></i>
+                <i class="bi bi-star-fill active"></i>   
+            `
+            break
     }
     return result
 }
 writeReview(API_FIREBASE)
-
+console.log(createStar(4));
 function postNewComment(comment) {
     fetch("https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/comment.json", {
       method: "POST",
@@ -515,9 +569,12 @@ async function getComment(url) {
     const res =  await fetch(url)
     const data =  await res.json()
     const writeArea = document.querySelector(".review-container")
+    const reviewCount = document.querySelector(".review-count")
+    let i = 0
     for(const key in data) {
         const value =  data[key]
         if(value.product_id == product_id) {
+            i += 1
             writeArea.innerHTML += `
             <li class="review-item">
             <div class="review-item-name">
@@ -540,6 +597,7 @@ async function getComment(url) {
             `
         }
     }
+    reviewCount.textContent = i
 }
 
 getComment("https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/comment.json")

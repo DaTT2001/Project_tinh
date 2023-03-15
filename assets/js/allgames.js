@@ -132,7 +132,9 @@ async function getGames(url) {
     const res = await fetch(url);
     const data = await res.json();
     showGameList(data.results);
+    console.log(data.results);
     resultFound.textContent = `${data.count}`
+    addToCart()
 }
 getGames(API_GAME +`&ordering=${selectArea.value}`)
 function searchListGames() {

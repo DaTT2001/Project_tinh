@@ -25,6 +25,7 @@
    <!-- import my css -->
    <link rel="stylesheet" href="./assets/css/header.css" />
    <link rel="stylesheet" href="./assets/css/products.css" />
+   <link rel="stylesheet" href="./assets/css/footer.css">
 
     <title>Document</title>
 </head>
@@ -169,11 +170,11 @@
 <!-- review -->
      <div class="product-review">
       <div class="container">
-        <h6>REVIEWS</h6>
+        <h6>REVIEWS (<span class="review-count">0</span>)</h6>
         <ul class="review-container">
         </ul>
         <form action="" id="review">
-          <textarea name="review_text" id="review_text" cols="30" rows="10" placeholder="Write here..."></textarea>
+          <textarea name="review_text" id="review_text" placeholder="Write here..."></textarea>
           <select name="star" id="star">
             <option value="5">5 star</option>
             <option value="4">4 star</option>
@@ -183,11 +184,37 @@
           </select>
           <button type="submit">Send</button>
         </form>
+        <p class="text-area-err">This field is required</p>
       </div>
      </div>
-
-
-
+<!-- footer -->
+<div class="footer">
+  <div class="payment-type">
+    <div class="container d-flex gap-5">
+      <img src="https://assets.eneba.com/payments/v1/color/wallet.svg" alt=""
+    width="65px">
+    <img src="https://assets.eneba.com/payments/v1/color/braintree_paypal.svg" alt=""
+    width="65px">
+    <img src="https://assets.eneba.com/payments/v1/color/checkout.svg" alt=""
+    width="65px">
+    </div>    
+  </div>
+  <div class="container">
+    <div class="row footer-icon">
+      <div class="col-md  d-flex justify-content-center gap-lg-5">
+        <i class="bi bi-facebook"></i>
+      <i class="bi bi-twitter"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-youtube"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col footer-content d-flex justify-content-center">
+      <p>Copyright © 2018-2023 DC PTE. LTD. All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- import jquery -->
     <script src="./lib/jquery-3.6.3.min.js"></script>
@@ -198,5 +225,6 @@
     <!-- import my js -->
     <script src="./assets/js/product.js"></script>
     <script src="./assets/js/navbar.js"></script>
+    <script src="./assets/js/addToCart.js"></script>
 </body>
 </html>

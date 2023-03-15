@@ -68,7 +68,7 @@ function search() {
         e.preventDefault()
         const formData = new FormData(searchInput)
         const data = Object.fromEntries(formData);
-        getSearch(API+`&search=${data.search_input}`)
+        getSearch(API_RAWG+`&search=${data.search_input}`)
       }  
     )
 }

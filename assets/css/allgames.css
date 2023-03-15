@@ -215,5 +215,10 @@ input:focus {
     font-size: 18px;
     font-weight: 600;
 }
-
+.add-to-cart {
+    float: right;
+}
+.add-to-cart:hover {
+    color: #FAD318;
+}
 

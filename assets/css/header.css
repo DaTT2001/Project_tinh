@@ -105,6 +105,8 @@
 
 .search-result {
     padding: 10px;
+    text-decoration: none;
+    color: black;
 }
 .search-result:hover {
     background-color: #ccc;

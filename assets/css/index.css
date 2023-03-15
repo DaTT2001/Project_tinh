@@ -254,28 +254,6 @@ body {
 }
 /* community end */
 
-/* footer start */
-.footer {
-    padding-bottom: 24px;
-    width: 100%;
-    background-color: #1C0A45;
-}
-.footer .payment-type {
-    background-color: white;
-    padding:10px 0px;
-}
-.footer .footer-icon {
-    margin-top: 24px;
-    color: white;
-    font-size: 30px;
-}
-.footer .footer-content {
-    margin-top: 24px;
-    color: white;
-}
-/* footer end */
-
-
 
 /* user dropdown */
 .dropdown-item:hover {

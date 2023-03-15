@@ -176,15 +176,15 @@ function showPlatforms(platform) {
 
 getGames(API_GAME)
 
-// event click add-to-cart-icon start
-function addToCart() {
-  const addToCartIcon = document.querySelectorAll(".add-to-cart")
-  addToCartIcon.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      item.style.color = "#FAD318"
-    })
-  })
-}
+// // event click add-to-cart-icon start
+// function addToCart() {
+//   const addToCartIcon = document.querySelectorAll(".add-to-cart")
+//   addToCartIcon.forEach((item) => {
+//     item.addEventListener('click', (e) => {
+//       item.style.color = "#FAD318"
+//     })
+//   })
+// }
 // click add to cart icon end
 
 

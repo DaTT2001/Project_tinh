@@ -22,7 +22,8 @@ function addToCart() {
             const newValue = 1
             postCartToFirebase(uid, newKey, newValue)
             addToCartIcon[i].style.color = "#FAD322"
-            Toasty()
+            alert("Add to cart complete. Check and buy now!")
+            location.reload()
         })
     }
 }

@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #4618AC !important;
+}
+.header,.header-top-bar {
+    height: 100px;
+    background-color: #3D1597;
+}

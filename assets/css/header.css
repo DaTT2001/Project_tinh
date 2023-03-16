@@ -31,10 +31,13 @@
 .top-bar .function-btn > a {
     color: white;
 }
-.top-bar .function-btn .func-icon {
+.top-bar .function-btn .cart-icon > a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
     font-size: 30px;
 }
-.top-bar .function-btn .func-icon:hover {
+.top-bar .function-btn .cart-icon > a:hover {
     color: #FAD318;
 }
 .user-login {
@@ -125,4 +128,93 @@
 }
 .cart-icon {
     position: relative;
+}
+.cart-popup {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #5825CC;
+    width: 400px;
+    /* height: 100px; */
+    right: 0px;
+    z-index: 999;
+}
+.cart-popup.active {
+    display: flex
+}
+.cart-popup-header {
+    padding: 10px;
+}
+.cart-popup-header h5 {
+    margin: 0;
+    font-weight: 700;
+}
+.cart-popup-header i{
+    font-size: 20px;
+}
+.cart-popup-content ul {
+    list-style: none;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.popup-cart-item {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.popup-cart-item.shopping-cart-empty {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.popup-cart-item.shopping-cart-empty svg {
+    display: block;
+}
+.popup-cart-item div:first-child {
+    width: 80%;
+}
+.cart-item-info span:first-child{
+    font-weight: 700;
+}
+.popup-cart-item a {
+    text-decoration: none;
+    color: white;
+    max-width: 50%;
+}
+.popup-cart-item img{
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+}
+.cart-popup-footer {
+    padding: 10px;
+}
+.cart-popup-footer p {
+    margin: 0;
+}
+.cart-popup-footer span {
+    font-size: 30px;
+    font-weight: 600;
+}
+.cart-popup-footer.none {
+    display: none !important;
+}
+#view-cart {
+    background-color: #fad318;
+    color: #000;
+    border: none;
+    text-align: center;
+    margin: 10px;
+    height: 35px;
+    font-weight: 700;
+}
+#view-cart:hover {
+    background-color: #f5a623;
+}
+.cart-popup-header > i:hover {
+    color: red;
+    cursor: pointer;
 }

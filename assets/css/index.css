@@ -157,7 +157,7 @@ body {
     font-size: 18px;
     font-weight: 600;
 }
-.add-to-cart {
+.add-to-cart, .add-to-cart1 {
     float: right;
 }
 .add-to-cart:hover {

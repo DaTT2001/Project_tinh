@@ -8,7 +8,7 @@ function Toasty()
     {
         var toastHTMLElement = document.getElementById( 'EpicToast' );        
         var toastElement = new bootstrap.Toast( toastHTMLElement, option );  
-        toastElement.show( );
+        toastElement.show();
     }
 
 function addToCart() {
@@ -17,25 +17,28 @@ function addToCart() {
     let uid = location.search.slice(6);
     for(let i = 0; i < addToCartIcon.length; i++) {
         addToCartIcon[i].addEventListener("click", (e) => {
-            console.log(product_list[i].hash.slice(1));
             const newKey = product_list[i].hash.slice(1)
             const newValue = 1
             postCartToFirebase(uid, newKey, newValue)
-            addToCartIcon[i].style.color = "#FAD322"
-            alert("Add to cart complete. Check and buy now!")
-            location.reload()
-        })
+        })  
     }
 }
 
-function postCartToFirebase(uid, key , value) {
-    fetch(`https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/users/${uid}/carts.json`, {
+
+async function postCartToFirebase(uid, key , value) {
+    if(!uid) {
+        window.location.assign("./login.html")
+    }
+    else {
+        await fetch(`https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/users/${uid}/carts.json`, {
       method: "PATCH",
       body: JSON.stringify({[key]: value}),
       headers: {
         "Content-Type": "application/json",
       },
     });
+    location.reload()
+    }
 }
 
             

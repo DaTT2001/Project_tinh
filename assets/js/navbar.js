@@ -143,7 +143,7 @@ async function getCartCount() {
               alt=""
             />
           <a href="${checkLogin("products")}#${data1.id}"> 
-          ${handleName(data1.name)}
+          ${data1.name}
           </a>
         </div>
         <div class="cart-item-info">
@@ -163,14 +163,6 @@ function getPricePopup(id) {
   return Math.round((id.rating) * 300)/100
 }
 getCartCount()
-
-function handleName(name) {
-  return name
-}
-
-
-
-
 
 
 

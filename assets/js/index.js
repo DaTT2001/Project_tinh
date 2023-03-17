@@ -67,7 +67,7 @@ function showRcmGames(data) {
       <div class="product-overview">
       <p>Genres: ${showGenre(data[i].genres)}</p>
       <div class="platforms-icon">${showPlatforms(data[i].platforms)}  
-      <span class="add-to-cart"><i class="bi bi-heart"></i></span>
+      <span class="add-to-cart"><i class="bi bi-cart-plus-fill"></i></span>
     </div>
     </div>
   </div>`
@@ -100,10 +100,32 @@ function showHotGames(data) {
       <div class="product-overview">
       <p>Genres: ${showGenre(data[i].genres)}</p>
       <div class="platforms-icon">${showPlatforms(data[i].platforms)}  
-      <span class="add-to-cart"><i class="bi bi-heart"></i></span>
+      <span class="add-to-cart"><i class="bi bi-cart-plus-fill"></i></span>
       </div>
     </div>
   </div>`
+  }
+}
+async function checkCart(uid) {
+  const res = await fetch(`https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/users/${uid}/carts.json`)
+  const data = await res.json()
+  const product_id_list = []
+    for(let key in data) {
+      product_id_list.push(key)
+    }
+
+  const product_list = document.querySelectorAll(".product-card > a") 
+  const addToCartIcon = document.querySelectorAll(".add-to-cart")
+  for(let i = 0; i < addToCartIcon.length; i++) {
+
+        const newKey = product_list[i].hash.slice(1)
+        if(product_id_list.includes(newKey)) {
+          addToCartIcon[i].innerHTML = `
+          <i class="bi bi-cart-check-fill"></i>
+          `
+          addToCartIcon[i].style.color = "#FAD322" 
+          addToCartIcon[i].classList.replace("add-to-cart", "add-to-cart1")
+        }
   }
 }
 function getClassByRate(rating) {
@@ -126,6 +148,8 @@ async function getGames(url) {
   showRcmGames(data.results);
   showHotGames(data.results);
   addToCart()
+  checkCart(location.search.slice(6))
+
 }
 function getPrice(id) {
   if(id.rating === 0) {

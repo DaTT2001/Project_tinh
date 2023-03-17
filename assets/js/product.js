@@ -32,6 +32,13 @@ async function getGame(url) {
     showMoreDetails(data)
     showRequirement(data)
     showDescription(data)
+    addToCartBtn.addEventListener("click", (e) => {
+      postCartToFirebase(location.search.slice(6), data.id, 1)
+    })
+    buyBtn.addEventListener("click", (e) => {
+      postCartToFirebaseAndRedirect(location.search.slice(6), data.id, 1)
+    }) 
+    
 }
 getGame(API_GAME)
 function getClassByRate(rating) {
@@ -601,3 +608,40 @@ async function getComment(url) {
 }
 
 getComment("https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/comment.json")
+
+
+
+
+// redirect
+const buyBtn = document.querySelector(".buy-btn")
+const addToCartBtn = document.querySelector(".wish-btn")
+async function postCartToFirebase(uid, key , value) {
+  if(!uid) {
+      window.location.assign("./login.html")
+  }
+  else {
+      await fetch(`https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/users/${uid}/carts.json`, {
+    method: "PATCH",
+    body: JSON.stringify({[key]: value}),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  location.reload()
+  }
+}
+async function postCartToFirebaseAndRedirect(uid, key , value) {
+  if(!uid) {
+      window.location.assign("./login.html")
+  }
+  else {
+      await fetch(`https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/users/${uid}/carts.json`, {
+    method: "PATCH",
+    body: JSON.stringify({[key]: value}),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  window.location.assign(`${checkLogin("carts")}`)
+  }
+}

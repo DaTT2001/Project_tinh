@@ -613,6 +613,16 @@ getComment("https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedata
 
 
 // redirect
+const modalLoading = document.querySelector(".modal-loading")
+function reloadPage() {
+  const currentUrl = location.href;
+  console.log(currentUrl);
+  modalLoading.style.display = "flex"
+  setTimeout(function() {
+    // Thay đổi địa chỉ URL của trang để tải lại trang
+    location.reload()
+  }, 1000);
+}
 const buyBtn = document.querySelector(".buy-btn")
 const addToCartBtn = document.querySelector(".wish-btn")
 async function postCartToFirebase(uid, key , value) {
@@ -627,7 +637,7 @@ async function postCartToFirebase(uid, key , value) {
       "Content-Type": "application/json",
     },
   });
-  location.reload()
+  reloadPage()
   }
 }
 async function postCartToFirebaseAndRedirect(uid, key , value) {

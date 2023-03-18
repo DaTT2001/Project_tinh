@@ -18,9 +18,6 @@ async function getCart() {
       let price = 0
     if(!product_id_list.length) {
         cartPopupContentEl.innerHTML = `
-        <li class="cart-heading">
-            <h6>YOUR CART</h6>
-        </li>
         <li class="cart-empty">
         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" class="sHS1HD" style="max-width: 40px; min-width: 40px; height: auto;"><path fill="#FAC917" fill-rule="nonzero" d="M7.5 0a7.5 7.5 0 1 0 0 15 7.5 7.5 0 0 0 0-15zm1.56 11.62c-.39.16-.7.27-.92.35-.23.08-.5.12-.8.12a1.6 1.6 0 0 1-1.1-.34 1.1 1.1 0 0 1-.38-.87 3.15 3.15 0 0 1 .12-.9l.48-1.7.11-.47c.03-.15.04-.28.04-.4 0-.22-.04-.37-.13-.46-.1-.08-.26-.12-.52-.12-.12 0-.25.01-.38.05L5.24 7l.13-.52c.32-.13.62-.24.9-.33.3-.1.57-.14.83-.14.46 0 .82.11 1.07.34.25.22.38.51.38.87a5.08 5.08 0 0 1-.12.9l-.48 1.7a4.81 4.81 0 0 0-.16.87c0 .23.05.38.16.46.1.09.27.13.52.13a2.26 2.26 0 0 0 .72-.17l-.13.52zm-.08-6.9c-.23.2-.5.3-.81.3-.32 0-.59-.1-.82-.3a1 1 0 0 1-.33-.76 1 1 0 0 1 .33-.76c.23-.21.5-.32.82-.32.31 0 .58.1.8.32a1 1 0 0 1 .34.76 1 1 0 0 1-.33.76z"></path></svg>
         <p>Your shopping cart is empty<a href="${checkLogin("index")}">Go to Homepage</a></p>

@@ -134,8 +134,8 @@ async function getGames(url) {
     showGameList(data.results);
     console.log(data.results);
     resultFound.textContent = `${data.count}`
-    addToCart()
     checkCart(location.search.slice(6))
+    addToCart()
 }
 getGames(API_GAME +`&ordering=${selectArea.value}`)
 function searchListGames() {

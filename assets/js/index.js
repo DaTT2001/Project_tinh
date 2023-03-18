@@ -147,9 +147,8 @@ async function getGames(url) {
   const data = await res.json();
   showRcmGames(data.results);
   showHotGames(data.results);
-  addToCart()
   checkCart(location.search.slice(6))
-
+  addToCart()
 }
 function getPrice(id) {
   if(id.rating === 0) {
@@ -223,3 +222,4 @@ function bannerClick(name,page) {
 }
 bannerClick(rcmBanner, "allgames")
 bannerClick(hotGameBanner,"allgames")
+

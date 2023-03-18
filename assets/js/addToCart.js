@@ -1,20 +1,18 @@
-var option = 
-    {
-        animation : true,
-        delay : 1500
-    };
-            
-function Toasty()
-    {
-        var toastHTMLElement = document.getElementById( 'EpicToast' );        
-        var toastElement = new bootstrap.Toast( toastHTMLElement, option );  
-        toastElement.show();
-    }
+const modalLoading = document.querySelector(".modal-loading")
+function reloadPage() {
+  const currentUrl = location.href;
+  modalLoading.style.display = "flex"
+  setTimeout(function() {
+    // Thay đổi địa chỉ URL của trang để tải lại trang
+    location.assign(currentUrl);
+  }, 1000);
+}
 
 function addToCart() {
     const addToCartIcon = document.querySelectorAll(".add-to-cart")
     const product_list = document.querySelectorAll(".product-card > a")
     let uid = location.search.slice(6);
+    console.log(addToCartIcon);
     for(let i = 0; i < addToCartIcon.length; i++) {
         addToCartIcon[i].addEventListener("click", (e) => {
             const newKey = product_list[i].hash.slice(1)
@@ -37,7 +35,7 @@ async function postCartToFirebase(uid, key , value) {
         "Content-Type": "application/json",
       },
     });
-    location.reload()
+    reloadPage()
     }
 }
 

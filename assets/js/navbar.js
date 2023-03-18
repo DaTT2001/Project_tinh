@@ -9,7 +9,12 @@ const API_RAWG = `https://rawg.io/api/games?token&key=26b25919da7f43a3a316e35eb4
 
 navBarArea.forEach(nav => {
   nav.addEventListener("click", (e) => {
-    window.location.assign(`${checkLogin(nav.value)}`)
+    if(nav.value == 'community') {
+      window.location.assign("https://discord.com/")
+    }
+    else {
+      window.location.assign(`${checkLogin(nav.value)}`)
+    }
   })
 })
 logo.addEventListener("click", (e) => {

@@ -44,12 +44,12 @@
         <div class="container">
           <div class="row top-bar">
             <div
-              class="col-md-2 d-flex align-items-center justify-content-start"
+              class="col-md-1 d-flex align-items-center justify-content-start"
             >
-              <img class="logo" src="./assets/images/logo1.png" width="140px" alt="" />
+              <img class="logo" src="./assets/images/logo1.png" width="85px" alt="" />
             </div>
             <div
-              class="col-md-7 d-flex align-items-center justify-content-start"
+              class="col-md-3 d-flex align-items-center justify-content-center"
             >
               <form class="search-input-container" onsubmit="redirectToAllProduct()">
                 <input class="search-input" name="search_input" type="text" />
@@ -58,8 +58,20 @@
                 </div>
               </form>
             </div>
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+              <div class="header-nav-bar">
+                <!-- <div class="container"> -->
+                  <div class="nav-bar">
+                      <button value="index">HOME</button>
+                      <button value="allgames">ALL GAMES</button>
+                      <button value="new">NEW GAME</button>
+                      <!-- <button value="hotdeals"></button> -->
+                      <button value="aboutus">ABOUT US</button>
+                  </div>
+              </div>
+            </div>
             <div
-              class="col-md-3 d-flex align-items-center justify-content-end gap-4 function-btn"
+              class="col-md-2 d-flex align-items-center justify-content-end gap-4 function-btn"
             >
               <!-- <a href="" class="bi bi-heart func-icon"></a> -->
               <div class="cart-icon">
@@ -98,29 +110,12 @@
       </div>
       <!-- top bar end -->
 
-      <!-- nav bar start -->
-      <div class="header-nav-bar">
-        <div class="container">
-          <div class="row nav-bar">
-            <div
-              class="col-md-12 d-flex align-items-center justify-content-start"
-            >
-              <button value="allgames">ALL GAMES</button>
-              <button value="new">NEW</button>
-              <button value="community">COMMUNITY</button>
-              <button value="hotdeals">HOT DEALS</button>
-              <button value="aboutus">ABOUT US</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- nav bar end -->
     </div>
     <!-- header end -->
 
     <!-- slider start -->
     <div class="slider">
-      <div class="owl-carousel owl-theme">
+      <div class="owl-carousel owl-theme main-slider">
         <div class="item">
           <a href=""><img src="./assets/images/destiny2.webp" alt="" /></a>
         </div>
@@ -192,62 +187,175 @@
         <div class="container">
             <div class="row coming-soon-banner">
                 <a href="">
-                  <img src="./assets/images/coming-soon-banner.svg" width="100%" alt="">
+                  <img src="./assets/images/coming-soon-banner (2).svg" width="100%" alt="">
                 </a>
             </div>
             <!-- line 1 -->
             <div class="row coming-soon-product mt-5">
-              <div class="col-md-5">
-                <img src="./assets/images/ubisoft.webp" width="100%" height="320px" alt="">
-              </div>
-              <div class="col-md-7">
-                <div class="row">
-                  <div class="col-md-4">
-                    <a href="">
-                      <img src="./assets/images/Products/assasin-creed-mirage.jpg" alt="" width="100%" height="320px">
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="">
-                      <img src="./assets/images/Products/assasin-creed-mirage.jpg" alt="" width="100%" height="320px">
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="">
-                      <img src="./assets/images/Products/assasin-creed-mirage.jpg" alt="" width="100%" height="320px">
-                    </a>
-                  </div>
+              <div class="col-md-6">
+                <div class=" coming-soon-pub">
+                  <img src="./assets/images/ubisoft.webp" alt="">
                 </div>
               </div>
+                  <div class="col-md-2">
+                    <div class="coming-soon-pub-product">
+                      <img src="./assets/images/Products/assasin-creed-mirage.jpg" alt="" >
+                      <div class="pub-product-overview">
+                        Released in 06/12/2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="coming-soon-pub-product">
+                      <img src="./assets/images/ubisoft2.jpg" alt="" >
+                      <div class="pub-product-overview">
+                        Released in 07/12/2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="coming-soon-pub-product">
+                      <img src="./assets/images/ubisoft3.webp" alt="" >
+                      <div class="pub-product-overview">
+                        Released in 08/12/2023
+                      </div>
+                    </div>
+                  </div>
+                  
             </div>
             <!-- line 2 -->
-            <div class="row coming-soon-product mt-4">
-              <div class="col-md-5">
-                <img src="./assets/images/ubisoft.webp" width="100%" height="320px" alt="">
-              </div>
-              <div class="col-md-7">
-                <div class="row">
-                  <div class="col-md-4">
-                    <a href="">
-                      <img src="./assets/images/Products/assasin-creed-mirage.jpg" alt="" width="100%" height="320px">
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="">
-                      <img src="./assets/images/Products/assasin-creed-mirage.jpg" alt="" width="100%" height="320px">
-                    </a>
-                  </div>
-                  <div class="col-md-4">
-                    <a href="">
-                      <img src="./assets/images/Products/assasin-creed-mirage.jpg" alt="" width="100%" height="320px">
-                    </a>
-                  </div>
+            <div class="row coming-soon-product mt-5">
+              <div class="col-md-6">
+                <div class=" coming-soon-pub">
+                  <img src="./assets/images/capcom.jpg" alt="">
                 </div>
               </div>
+                  <div class="col-md-2">
+                    <div class="coming-soon-pub-product">
+                      <img src="./assets/images/capcom1.jpg" alt="" >
+                      <div class="pub-product-overview">
+                        Released in 11/16/2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="coming-soon-pub-product">
+                      <img src="./assets/images/capcom2.jpg" alt="" >
+                      <div class="pub-product-overview">
+                        Released in 12/12/2023
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="coming-soon-pub-product">
+                      <img src="./assets/images/capcom3.jpg" alt="" >
+                      <div class="pub-product-overview">
+                        Released in 04/26/2023
+                      </div>
+                    </div>
+                  </div>
+                  
             </div>
         </div>
     </div>
     <!-- coming soon end -->
+    <!-- categories start -->
+    <div class="categories">
+      <div class="container">
+        <div class="row categories-banner">
+          <img src="./assets/images/Categories.svg " width="100%" height="" alt="">
+        </div>
+        <div class="row">
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/action.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">Action</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/adventure.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">Adventure</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/fps.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">FPS</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/rpg.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">RPG</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/indie.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">Indie</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/simulation.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">Simulation</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/racing.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">Racing</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/fighting.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">Fighting</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/sport.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">Sport</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/puzzle.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">Puzzle</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/music.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">Music</div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="categories-item">
+              <div class="categories-quantity">5887</div>
+              <img src="https://assets.eneba.com/tag/v2/educational.svg" width="50" height="50" alt="Action">
+              <div class="categories-name">Educational</div>
+            </div>
+          </div>
+          
+          
+        </div>
+      </div>
+
+    </div>
     <!-- community banner start -->
     <div class="community-banner d-flex align-items-center justify-content-center flex-column">
       <h2>JOIN THE CHAT </h2>

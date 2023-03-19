@@ -1,4 +1,4 @@
-const navBarArea = document.querySelectorAll(".nav-bar div button")
+const navBarArea = document.querySelectorAll(".nav-bar button")
 const logo = document.querySelector(".logo")
 let uid = location.search.slice(6);
 const user = document.querySelector(".user-login");

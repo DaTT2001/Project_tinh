@@ -1,18 +1,21 @@
 /* top bar start */
 .search-input-container {
+    width: 100%;
     position: relative;
-    display: flex;
+    /* display: flex; */
     align-items: center;
 }
 .search-input-container button {
-    width: 50px;
-    height: 50px;
+    position: absolute;
+    width: 35px;
+    height: 35px;
     border: 1px solid white;
 }
 .search-input {
-    width: 550px;
-    height: 50px;
-    background-color: #4618AC;
+    width: 100%;
+    /* width: 250px; */
+    height: 35px;
+    background-color: #311178;
     border: 1px solid white;
     color: white;
 }
@@ -20,10 +23,14 @@
     outline: none;
 }
 .header-top-bar {
-    background-color: #4618AC;
+    background-color: #311178;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0px;
 }
 .top-bar {
-    height: 100px;
+    height: 60px;
 }
 .top-bar .function-btn {
     color: white;
@@ -35,7 +42,7 @@
     text-decoration: none;
     color: white;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 20px;
 }
 .top-bar .function-btn .cart-icon > a:hover {
     color: #FAD318;
@@ -49,7 +56,7 @@
 .user-login > a {
     text-decoration: none;
     color: white;
-    font-size: 20px;
+    font-size: 14px;
 }
 .user-login > a:hover {
     color: #FAD318;
@@ -64,7 +71,10 @@
     margin: 0;
 }
 .person-login i {
-    font-size: 35px;
+    font-size: 25px;
+}
+.user-login > a > p {
+    font-size: 14px;
 }
 .search-result-area {
     top: 50px;
@@ -83,22 +93,22 @@
 
 /* nav bar start */
 .header-nav-bar {
-    background-color: #311178;
+    /* background-color: #311178; */
 }
-.nav-bar {
+/* .nav-bar {
     height: 50px;
-}
-.nav-bar > div > button {
+} */
+.nav-bar > button {
     background: none;
     border: none;
-    font-size: 15px;
+    font-size: 14px;
     color: white;
     font-weight: 500;
     letter-spacing: 0.5px;
     padding: 0 20px;
-    line-height: 50px;
+    line-height: 60px;
 }
-.nav-bar > div > button:hover {
+.nav-bar > button:hover {
     background-color: #1F0A4E;
     color: #FAD318;
 }
@@ -217,8 +227,4 @@
 .cart-popup-header > i:hover {
     color: red;
     cursor: pointer;
-}
-.header-checkout {
-    color: white;
-    font-size: 24px;
 }

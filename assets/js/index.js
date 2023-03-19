@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(".owl-carousel").owlCarousel({
+  $(".main-slider").owlCarousel({
     loop: true,
     margin: 10,
     nav: true,
@@ -223,3 +223,13 @@ function bannerClick(name,page) {
 bannerClick(rcmBanner, "allgames")
 bannerClick(hotGameBanner,"allgames")
 
+
+
+// categories
+const categoriesItemArr = document.querySelectorAll(".categories-item")
+console.log(categoriesItemArr);
+categoriesItemArr.forEach(item => {
+  item.addEventListener("click", (e) => {
+    location.assign(`${checkLogin("allgames")}`)
+  })
+});

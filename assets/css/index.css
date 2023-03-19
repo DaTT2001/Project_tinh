@@ -13,6 +13,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: #4618AC;
+    margin-top: 60px;
 }
 .owl-nav button {
     position: absolute;
@@ -42,6 +43,10 @@ body {
     bottom: 5px;
     left: 0px;
     right: 0px;
+}
+.owl-carousel .owl-item img {
+    height: 550px;
+    object-fit: cover;
 }
 /* slider end */
 
@@ -193,37 +198,56 @@ body {
     padding-bottom: 24px;
     /* padding-top: 24px; */
 }
-
+.coming-soon-banner img {
+    width: 100%;
+}
 .coming-soon-banner img:hover {
     opacity: 0.8;
+}
+
+.coming-soon-pub img {
+    width: 100%;
+    object-fit: cover;
+    height: 320px;
+}
+.coming-soon-pub-product {
+    position: relative;
+    overflow: hidden;
+    /* width: 100%; */
+}
+.coming-soon-pub-product img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+.pub-product-overview {
+    transform: translateY(-100%);
+    overflow-y: auto;
+    transition: transform 0.3s ease-in;
+    max-height: 100%;
+    top: 0px;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+.coming-soon-pub-product:hover .pub-product-overview  {
+    transform: translateY(0);
 }
 /* coming soon banner end */
 
 
-/* hot news start */
-.hot-news {
+/* categories-start */
+.categories {
     background-color: #311178;
     padding-top: 24px; 
     padding-bottom: 24px;
 }
-.news-card .news-card-info a {
-    text-decoration: none;
-    color: white;
-}
-.news-card .news-card-info p {
-    color: white;
-}
-.news-card .news-card-info button {
-    background-color: #311178;
-    color: white;
-    font-weight: 500;
-    border: 1px solid white;
-    padding: 5px 20px;
-}
-.news-card .news-card-info button:hover {
-    background-color: #220C54;
-}
-/* hot news end */
+
+/* categories end */
 
 /* community banner start */
 .community-banner {
@@ -258,4 +282,33 @@ body {
 /* user dropdown */
 .dropdown-item:hover {
     color: #311178!important;
+}
+
+.nav-bar button:first-child{
+    background-color: #1F0A4E;
+    color: #FAD318;
+}
+
+
+/* categories item */
+.categories-banner {
+    margin-bottom:20px ;
+}
+.categories-item {
+    background-color: #5825cc;
+    font-size: 20px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 7px 15px 0 rgba(0,0,0,.2);;
+}
+.categories-item:hover {
+    background-color:   #32117d;
+    cursor: pointer;
 }

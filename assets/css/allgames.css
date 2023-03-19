@@ -4,6 +4,28 @@
 }
 .products-container {
     background-color: #4618AC;
+    /* margin-top: 60px; */
+}
+.allgames-img {
+    background-image: URL(https://media.greenmangaming.com/flat-page/seo/all-games.jpg);
+    margin-top: 60px;
+    height: 240px   ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.allgames-img h1 {
+    line-height: .9;
+    font-size: 80px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 900;
 }
 input:focus {
     outline: none;
@@ -15,7 +37,7 @@ input:focus {
     padding-bottom: 10px;
 }
 .filter-table {
-    margin-top: 50px;
+    margin-top: 20px;
     background-color: #5825CC;
     color: white;
     font-size: 16px;
@@ -85,7 +107,7 @@ input:focus {
 
 /* product card start */
 .count-order{
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 20px;
     outline: none;
 }
@@ -222,3 +244,9 @@ input:focus {
     color: #FAD318;
 }
 
+
+
+.nav-bar button:nth-child(2){
+    background-color: #1F0A4E;
+    color: #FAD318;
+}

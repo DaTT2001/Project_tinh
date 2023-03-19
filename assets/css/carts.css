@@ -11,6 +11,7 @@ body {
 .content {
     margin-top: 30px;
     min-height: 500px;
+    margin-bottom: 30px;
 }
 .cart-container1 {
     min-height: 300px;
@@ -259,3 +260,13 @@ body {
   .return-carts:hover {
       color: #fad318;
   }
+
+
+
+  .header-checkout {
+    color: white;
+    font-size: 24px;
+}
+.logo {
+    cursor: pointer;
+}

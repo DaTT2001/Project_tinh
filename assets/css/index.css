@@ -204,7 +204,9 @@ body {
 .coming-soon-banner img:hover {
     opacity: 0.8;
 }
-
+.coming-soon-product {
+    margin-top: 30px;
+}
 .coming-soon-pub img {
     width: 100%;
     object-fit: cover;
@@ -311,4 +313,29 @@ body {
 .categories-item:hover {
     background-color:   #32117d;
     cursor: pointer;
+}
+
+@media (max-width: 1176px) {
+    .product-card img {
+        height: 260px;
+    }
+    .product-card .product-info a {
+        height: 100px;
+    }
+    .info-name-price h5 {
+        font-size: 14px;
+    }
+    .coming-soon-pub img {
+        height: 240px;
+    }
+    .coming-soon-pub-product img {
+        height: 240px;
+    }
+    .coming-soon-product {
+        margin-top: 20px;
+    }
+    .categories-item {
+        font-size: 15px;
+        gap: 10px;
+    }
 }

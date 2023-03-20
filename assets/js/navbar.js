@@ -32,9 +32,7 @@ async function getUID(url) {
   const data = await res.json();
   const userData = data[`${uid}`];
   user.innerHTML = `
-            <a class="nav-link dropdown-toggle person-login person-setting d-flex" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-person"> </i>
-                <p>${userData.username}</p>
+            <a class="nav-link dropdown-toggle person-login person-setting d-flex" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">                <p>${userData.username}</p>
             </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="./index.html">Log out</a></li>
@@ -188,3 +186,35 @@ closeIcon.addEventListener("click", (e) => {
 })
 // console.log(cartIcon);
 // cartIcon.href = `${checkLogin("carts")}`
+
+
+
+// reponsive
+const navbarIcon = document.querySelector(".nav-bar-icon i")
+const navbar = document.querySelector(".nav-bar")
+const searchIcon = document.querySelector(".search-icon")
+const searchInputContainer = document.querySelector(".search-input")
+const xIcon = document.querySelector(".x-icon")
+const personIcon = document.querySelector(".person-icon")
+const userLogin = document.querySelector(".user-login")
+navbarIcon.addEventListener("click", (e) => {
+  navbar.classList.toggle("active")
+})
+searchIcon.addEventListener("click", (e) => {
+  searchInputContainer.classList.add("active")
+  searchInput.classList.add("active")
+  searchIcon.classList.add("active")
+  xIcon.classList.add("active")
+})
+xIcon.addEventListener("click", (e) => {
+  searchInputContainer.classList.remove("active")
+  searchInput.classList.remove("active")
+  searchIcon.classList.remove("active")
+  xIcon.classList.remove("active")
+  searchInputContainer.value = ""
+  searchResultArea.innerHTML = ""
+})
+personIcon.addEventListener("click", (e) => {
+  userLogin.classList.toggle("active")
+})
+

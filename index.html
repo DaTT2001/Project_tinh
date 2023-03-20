@@ -37,28 +37,25 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- start header -->
     <!-- top bar start-->
-    <div class="header">
       <div class="header-top-bar">
-        <div class="container">
-          <div class="row top-bar">
+          <div class="top-bar d-flex justify-content-between">
+            <div class="nav-bar-icon">
+              <i class="bi bi-list"></i>
+            </div>
             <div
-              class="col-md-1 d-flex align-items-center justify-content-start"
+              class="d-flex align-items-center justify-content-start"
             >
               <img class="logo" src="./assets/images/logo1.png" width="85px" alt="" />
             </div>
-            <div
-              class="col-md-3 d-flex align-items-center justify-content-center"
-            >
               <form class="search-input-container" onsubmit="redirectToAllProduct()">
-                <input class="search-input" name="search_input" type="text" />
-                <button type="submit"><i class="bi bi-search"></i></button>
+                <input class="search-input" name="search_input" type="text" placeholder="Search"/>
+                <i class="bi bi-search search-icon"></i>
+                <i class="bi bi-x x-icon"></i>
                 <div class="search-result-area">
                 </div>
               </form>
-            </div>
-            <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center">
               <div class="header-nav-bar">
                 <!-- <div class="container"> -->
                   <div class="nav-bar">
@@ -71,7 +68,7 @@
               </div>
             </div>
             <div
-              class="col-md-2 d-flex align-items-center justify-content-end gap-4 function-btn"
+              class="function-btn"
             >
               <!-- <a href="" class="bi bi-heart func-icon"></a> -->
               <div class="cart-icon">
@@ -95,23 +92,24 @@
                     <button id="view-cart">Viewcart</button>
                   </div>
               </div>
-              
+              <div class="person-icon">
+                <i class="bi bi-person"> </i>
+              </div>
               <div class="user-login">
                 <a class="person-login" href="./login.html">
-                  <i class="bi bi-person"> </i>
                   <p>Login</p>
                 </a>
                 <span>|</span>
-                <a href="./signup.html">Register</a>
+                <a href="./signup.html" class="person-login">
+                  <p>Register</p>
+                </a>
               </div>
-            </div>
           </div>
-        </div>
       </div>
       <!-- top bar end -->
 
-    </div>
-    <!-- header end -->
+      </div>
+    <!-- top bar end -->
 
     <!-- slider start -->
     <div class="slider">
@@ -191,7 +189,7 @@
                 </a>
             </div>
             <!-- line 1 -->
-            <div class="row coming-soon-product mt-5">
+            <div class="row coming-soon-product">
               <div class="col-md-6">
                 <div class=" coming-soon-pub">
                   <img src="./assets/images/ubisoft.webp" alt="">
@@ -224,7 +222,7 @@
                   
             </div>
             <!-- line 2 -->
-            <div class="row coming-soon-product mt-5">
+            <div class="row coming-soon-product">
               <div class="col-md-6">
                 <div class=" coming-soon-pub">
                   <img src="./assets/images/capcom.jpg" alt="">
@@ -275,77 +273,77 @@
           </div>
           <div class="col-2">
             <div class="categories-item">
-              <div class="categories-quantity">5887</div>
+              <div class="categories-quantity">3425</div>
               <img src="https://assets.eneba.com/tag/v2/adventure.svg" width="50" height="50" alt="Action">
               <div class="categories-name">Adventure</div>
             </div>
           </div>
           <div class="col-2">
             <div class="categories-item">
-              <div class="categories-quantity">5887</div>
+              <div class="categories-quantity">3211</div>
               <img src="https://assets.eneba.com/tag/v2/fps.svg" width="50" height="50" alt="Action">
               <div class="categories-name">FPS</div>
             </div>
           </div>
           <div class="col-2">
             <div class="categories-item">
-              <div class="categories-quantity">5887</div>
+              <div class="categories-quantity">2234</div>
               <img src="https://assets.eneba.com/tag/v2/rpg.svg" width="50" height="50" alt="Action">
               <div class="categories-name">RPG</div>
             </div>
           </div>
           <div class="col-2">
             <div class="categories-item">
-              <div class="categories-quantity">5887</div>
+              <div class="categories-quantity">2207</div>
               <img src="https://assets.eneba.com/tag/v2/indie.svg" width="50" height="50" alt="Action">
               <div class="categories-name">Indie</div>
             </div>
           </div>
           <div class="col-2">
             <div class="categories-item">
-              <div class="categories-quantity">5887</div>
+              <div class="categories-quantity">1987</div>
               <img src="https://assets.eneba.com/tag/v2/simulation.svg" width="50" height="50" alt="Action">
               <div class="categories-name">Simulation</div>
             </div>
           </div>
           <div class="col-2">
             <div class="categories-item">
-              <div class="categories-quantity">5887</div>
+              <div class="categories-quantity">1690</div>
               <img src="https://assets.eneba.com/tag/v2/racing.svg" width="50" height="50" alt="Action">
               <div class="categories-name">Racing</div>
             </div>
           </div>
           <div class="col-2">
             <div class="categories-item">
-              <div class="categories-quantity">5887</div>
+              <div class="categories-quantity">1456</div>
               <img src="https://assets.eneba.com/tag/v2/fighting.svg" width="50" height="50" alt="Action">
               <div class="categories-name">Fighting</div>
             </div>
           </div>
           <div class="col-2">
             <div class="categories-item">
-              <div class="categories-quantity">5887</div>
+              <div class="categories-quantity">1290</div>
               <img src="https://assets.eneba.com/tag/v2/sport.svg" width="50" height="50" alt="Action">
               <div class="categories-name">Sport</div>
             </div>
           </div>
           <div class="col-2">
             <div class="categories-item">
-              <div class="categories-quantity">5887</div>
+              <div class="categories-quantity">980</div>
               <img src="https://assets.eneba.com/tag/v2/puzzle.svg" width="50" height="50" alt="Action">
               <div class="categories-name">Puzzle</div>
             </div>
           </div>
           <div class="col-2">
             <div class="categories-item">
-              <div class="categories-quantity">5887</div>
+              <div class="categories-quantity">650</div>
               <img src="https://assets.eneba.com/tag/v2/music.svg" width="50" height="50" alt="Action">
               <div class="categories-name">Music</div>
             </div>
           </div>
           <div class="col-2">
             <div class="categories-item">
-              <div class="categories-quantity">5887</div>
+              <div class="categories-quantity">305</div>
               <img src="https://assets.eneba.com/tag/v2/educational.svg" width="50" height="50" alt="Action">
               <div class="categories-name">Educational</div>
             </div>

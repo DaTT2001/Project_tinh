@@ -23,6 +23,8 @@ const metacriticArr = document.querySelectorAll('.metacritic input')
 const resultFound = document.querySelector(".count-result span")
 const selectArea = document.getElementById("my-select-order")
 
+
+// color rating
 function getClassByRate(rating) {
   if(rating >= 80) {
     return "blue"
@@ -132,46 +134,132 @@ async function getGames(url) {
     const res = await fetch(url);
     const data = await res.json();
     showGameList(data.results);
-    console.log(data.results);
-    resultFound.textContent = `${data.count}`
+    resultFound.textContent = getDataCount(data)
     checkCart(location.search.slice(6))
     addToCart()
 }
-getGames(API_GAME +`&ordering=${selectArea.value}`)
+
+getGames(API_GAME+`&ordering=${selectArea.value}`)
+numOfPages(API_GAME+`&ordering=${selectArea.value}`)
+nextPage(API_GAME+`&ordering=${selectArea.value}`)
+
+
 function searchListGames() {
+    let currentAPI = API_GAME
     selectArea.addEventListener("change", (e) => {
       const genres = getGenres(checkBoxes)
-      getGames(API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
-      + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`)
+      currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
+      + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}` 
+      getGames(currentAPI)    
     })
     searchArea.addEventListener("input", (e) => {
         const genres = getGenres(checkBoxes)
-        getGames(API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
-        + getPlatforms(checkBoxesPlatforms)+ `&ordering=${selectArea.value}`)
-    })
+        currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
+        + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`
+      getGames(currentAPI)   
+
+      })
     checkBoxes.forEach((checkbox) => {
       checkbox.addEventListener("change", (e) => {
-      console.log(selectArea.value);
-
         const genres = getGenres(checkBoxes)
-        getGames(API_GAME + genres + `&search=${getProductName()}`+ getReleased(releaseDate) + getMetacritic(metacriticArr) + getPlatforms(checkBoxesPlatforms)+ `&ordering=${selectArea.value}` )
+        currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
+      + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`
+      getGames(currentAPI)   
+
       })
     })
     checkBoxesPlatforms.forEach((checkbox) => {
       checkbox.addEventListener("change", (e) => {
         const genres = getGenres(checkBoxes)
-        getGames(API_GAME + genres + `&search=${getProductName()}`+ getReleased(releaseDate) + getMetacritic(metacriticArr) + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`)
+        currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
+      + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`
+        getGames(currentAPI)
+
       })
     })
     metacriticArr[0].addEventListener("input", (e) => {
         const genres = getGenres(checkBoxes)
-        getGames(API_GAME + genres + `&search=${getProductName()}`+ getReleased(releaseDate) + getMetacritic(metacriticArr) + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`)
-    })
+        currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
+      + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`
+        getGames(currentAPI)
+      })
     metacriticArr[1].addEventListener("input", (e) => {
-        const genres = getGenres(checkBoxes)
-        getGames(API_GAME + genres + `&search=${getProductName()}`+ getReleased(releaseDate) + getMetacritic(metacriticArr) + getPlatforms(checkBoxesPlatforms)+ `&ordering=${selectArea.value}` )
-    })
+        const genres = getGenres(checkBoxes)        
+        currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
+      + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`
+        getGames(currentAPI)
+      })
   }
+
+
+function getDataCount(data) {
+  return data.count
+}
+
+// // Show button and change color
+function modify_buttons(all_buttons, required_page,currentAPI) {
+  let show_button_arr = []
+  // document.querySelector('.body-cards').innerHTML = ``
+  all_buttons.forEach((btn) => {
+      btn.classList.remove('active_button')
+      btn.classList.add('hidden_button')
+  })
+  if (required_page > 1) {
+      show_button_arr = required_page >= 3 ? all_buttons.slice(required_page - 3, required_page + 2) : all_buttons.slice(required_page - 2, required_page + 3)
+  }
+  else {
+    show_button_arr = all_buttons.slice(0,5)
+  }
+  show_button_arr.forEach(show_button => {
+      show_button.classList.remove('hidden_button')
+  })
+  all_buttons[required_page - 1].classList.add('active_button')
+  getGames(currentAPI + `&page=${required_page}`)
+}
+
+
+// Page Number
+function numOfPages(currentAPI) {
+  const num_buttons = document.querySelector('.number-pages')
+  for (num = 1; num <= 30; num++) {
+      if (num <= 5) {
+          button_number = `<button id = "${num}" class="num-page">${num}</button>`
+          num_buttons.innerHTML += button_number
+          continue
+      }
+      button_number = `<button id = "${num}" class="hidden_button num-page">${num}</button>`
+      num_buttons.innerHTML += button_number
+  }
+  const buttons = document.querySelectorAll('.num-page')
+  const all_buttons = Array.from(buttons)
+  all_buttons[0].classList.add('active_button')
+  all_buttons.forEach((button, index) => {
+      button.addEventListener("click", function () {
+          required_page = index + 1
+          modify_buttons(all_buttons, required_page, currentAPI )
+      })
+  });
+}
+// Next Page
+function nextPage(currentAPI) {
+  const next_page_btn = document.querySelector('.next-page')
+  const prep_page_btn = document.querySelector('.prep-page')
+  const buttons = document.querySelectorAll('.num-page')
+  const all_buttons = [...buttons]
+  next_page_btn.addEventListener('click', function () {
+      const current_page = Number(document.querySelector('.active_button').id)
+      const required_page = current_page + 1
+      modify_buttons(all_buttons, required_page)
+  })
+  prep_page_btn.addEventListener('click', () => {
+      const current_page = Number(document.querySelector('.active_button').id)
+      const required_page = current_page > 1 ? current_page - 1 : current_page
+      modify_buttons(all_buttons, required_page, currentAPI)
+  })
+}
+
+
+
 
 
 function getReleased(release) {
@@ -187,6 +275,7 @@ function getReleased(release) {
         return `&dates=${release[1].value}`
     }
 }
+
 function getMetacritic(metacritic) {
     if(metacritic[0].value.trim() == "" || metacritic[1].value.trim() =="") {
         return `&metacritic=1,100`

@@ -2,30 +2,42 @@
     background-color: #1F0A4E;
     color: #FAD318;
 }
+body {
+    background-color: #4618AC;
+}
 .products-container {
     background-color: #4618AC;
     /* margin-top: 60px; */
 }
 .allgames-img {
-    background-image: URL(https://media.greenmangaming.com/flat-page/seo/all-games.jpg);
     margin-top: 60px;
-    height: 240px   ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+    position: relative;
+    overflow: hidden;
+    height: 240px;
+}
+.allgames-img img {
+    height: 100%;
     width: 100%;
     object-fit: cover;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    transform: scale(1);
+    transition: transform .5s ease;
+}
+.allgames-img:hover img {
+    transform: scale(1.2);
+    overflow: hidden;
 }
 .allgames-img h1 {
+    position: absolute;
     line-height: .9;
-    font-size: 80px;
+    font-size: 70px;
     text-transform: uppercase;
     color: white;
     font-weight: 900;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* top: 0; */
+    margin: 0;
 }
 input:focus {
     outline: none;
@@ -249,4 +261,47 @@ input:focus {
 .nav-bar button:nth-child(2){
     background-color: #1F0A4E;
     color: #FAD318;
+}
+
+.all_button_pages {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.all_button_pages i {
+    color: white
+}
+
+.change-pages button {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 0.5px solid #eee;
+    color: white;
+}
+
+.change-pages {
+    display: flex;
+}
+
+.change-pages .page {
+    margin: 0px 5px;
+}
+
+.number-pages {
+    display: flex;
+    gap: 5px;
+}
+
+.hidden_button {
+    display: none;
+}
+
+.active_button {
+    background-color: #FAD318 !important;
+}
+.footer {
+    margin-top: 30px;
 }

@@ -30,77 +30,77 @@
     <title>Document</title>
 </head>
 <body>
-  <div class="header">
-    <div class="header-top-bar">
-      <div class="container">
-        <div class="row top-bar">
-          <div
-            class="col-md-1 d-flex align-items-center justify-content-start"
-          >
-            <img class="logo" src="./assets/images/logo1.png" width="85px" alt="" />
+  <div class="header-top-bar">
+    <div class="top-bar d-flex justify-content-between">
+      <div class="nav-bar-icon">
+        <i class="bi bi-list"></i>
+      </div>
+      <div
+        class="d-flex align-items-center justify-content-start"
+      >
+        <img class="logo" src="./assets/images/logo1.png" width="85px" alt="" />
+      </div>
+        <form class="search-input-container" onsubmit="redirectToAllProduct()">
+          <input class="search-input" name="search_input" type="text" placeholder="Search"/>
+          <i class="bi bi-search search-icon"></i>
+          <i class="bi bi-x x-icon"></i>
+          <div class="search-result-area">
           </div>
-          <div
-            class="col-md-3 d-flex align-items-center justify-content-center"
-          >
-            <form class="search-input-container" onsubmit="redirectToAllProduct()">
-              <input class="search-input" name="search_input" type="text" />
-              <button type="submit"><i class="bi bi-search"></i></button>
-              <div class="search-result-area">
-              </div>
-            </form>
-          </div>
-          <div class="col-md-6 d-flex align-items-center justify-content-center">
-            <div class="header-nav-bar">
-              <!-- <div class="container"> -->
-                <div class="nav-bar">
-                    <button value="index">HOME</button>
-                    <button value="allgames">ALL GAMES</button>
-                    <button value="new">NEW GAME</button>
-                    <!-- <button value="hotdeals"></button> -->
-                    <button value="aboutus">ABOUT US</button>
-                </div>
+        </form>
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="header-nav-bar">
+          <!-- <div class="container"> -->
+            <div class="nav-bar">
+                <button value="index">HOME</button>
+                <button value="allgames">ALL GAMES</button>
+                <button value="new">NEW GAME</button>
+                <!-- <button value="hotdeals"></button> -->
+                <button value="aboutus">ABOUT US</button>
             </div>
-          </div>
-          <div
-            class="col-md-2 d-flex align-items-center justify-content-end gap-4 function-btn"
-          >
-            <!-- <a href="" class="bi bi-heart func-icon"></a> -->
-            <div class="cart-icon">
-              <a class="bi bi-cart3">
-              </a>
-                <p class="cart-count"></p>
-                <div class="cart-popup">
-                  <div class="d-flex justify-content-between cart-popup-header align-items-center">
-                    <h5>My shopping cart</h5>
-                    <i class="bi bi-x-circle-fill"></i>
-                  </div>
-                  <div class="cart-popup-content">
-                    <ul>
-
-                    </ul>
-                  </div>
-                  <div class="cart-popup-footer d-flex align-items-center justify-content-between">
-                    <p>TOTAL:</p>
-                    <span class="total-price"></span>
-                  </div>
-                  <button id="view-cart">Viewcart</button>
-                </div>
-            </div>
-            
-            <div class="user-login">
-              <a class="person-login" href="./login.html">
-                <i class="bi bi-person"> </i>
-                <p>Login</p>
-              </a>
-              <span>|</span>
-              <a href="./signup.html">Register</a>
-            </div>
-          </div>
         </div>
       </div>
+      <div
+        class="function-btn"
+      >
+        <!-- <a href="" class="bi bi-heart func-icon"></a> -->
+        <div class="cart-icon">
+          <a class="bi bi-cart3">
+          </a>
+            <p class="cart-count"></p>
+            <div class="cart-popup">
+              <div class="d-flex justify-content-between cart-popup-header align-items-center">
+                <h5>My shopping cart</h5>
+                <i class="bi bi-x-circle-fill"></i>
+              </div>
+              <div class="cart-popup-content">
+                <ul>
+
+                </ul>
+              </div>
+              <div class="cart-popup-footer d-flex align-items-center justify-content-between">
+                <p>TOTAL:</p>
+                <span class="total-price"></span>
+              </div>
+              <button id="view-cart">Viewcart</button>
+            </div>
+        </div>
+        <div class="person-icon">
+          <i class="bi bi-person"> </i>
+        </div>
+        <div class="user-login">
+          <a class="person-login" href="./login.html">
+            <p>Login</p>
+          </a>
+          <span>|</span>
+          <a href="./signup.html" class="person-login">
+            <p>Register</p>
+          </a>
+        </div>
     </div>
-    <!-- top bar end -->
-  </div>
+</div>
+<!-- top bar end -->
+
+</div>
 
       <div class="content">
         <div class="container">

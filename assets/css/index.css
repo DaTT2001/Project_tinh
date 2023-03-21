@@ -207,6 +207,10 @@ body {
 .coming-soon-product {
     margin-top: 30px;
 }
+.coming-soon-pub {
+    box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
+
+}
 .coming-soon-pub img {
     width: 100%;
     object-fit: cover;
@@ -215,6 +219,7 @@ body {
 .coming-soon-pub-product {
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
     /* width: 100%; */
 }
 .coming-soon-pub-product img {
@@ -337,5 +342,21 @@ body {
     .categories-item {
         font-size: 15px;
         gap: 10px;
+    }
+}
+@media (max-width:768px ) {
+    .coming-soon-pub {
+        margin-bottom: 20px;
+    }
+    .categories-item {
+        font-size: 10px;
+        gap: 5px;
+    }
+    .categories-item img {
+        width: 30px;
+        height: 30px;
+    }
+    .owl-carousel .owl-item img {
+        height: 300px;
     }
 }

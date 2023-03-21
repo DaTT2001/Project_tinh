@@ -44,7 +44,7 @@ function showRcmGames(data) {
   console.log(data);
   for(let i = 0; i < 8; i++) {
     rcmContainer.innerHTML +=
-    `<div class="col-md-3 col-sm-6 col-12">
+    `<div class="col-md-3 col-sm-6 col-6">
     <div class="product-card">
     <a href="${checkLogin("products")}#${data[i].id}">
       <img
@@ -77,7 +77,7 @@ function showHotGames(data) {
   hotContainer.innerHTML = ""
   for(let i = 8; i < 12; i++) {
     hotContainer.innerHTML +=
-    `<div class="col-md-3 col-sm-6 col-12">
+    `<div class="col-md-3 col-sm-6 col-6">
     <div class="product-card">
     <a href="${checkLogin("products")}#${data[i].id}">
       <img

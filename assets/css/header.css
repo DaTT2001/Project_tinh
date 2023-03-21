@@ -427,4 +427,8 @@
         width: 300px;
     }
   }
-
+  @media (max-width: 450px) {
+    .top-bar .function-btn {
+        gap: 0px
+    }
+  }

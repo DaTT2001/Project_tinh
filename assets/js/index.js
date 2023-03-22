@@ -19,9 +19,34 @@ $(document).ready(function () {
     },
   });
 });
+$(document).ready(function () {
+  $(".comment-slider").owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 3500,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      350: {
+        items: 2,
+      },
+      600: {
+        items: 3,
+      },
+      1000: {
+        items: 5,
+      },
+    },
+  });
+});
 
 //dom
-const rcmContainer = document.querySelector(".rcm-product-card-container")
+const rcmContainer1 = document.querySelector(".rcm-product-card-container1")
+const rcmContainer2 = document.querySelector(".rcm-product-card-container2")
 const hotContainer = document.querySelector(".hot-game-container")
 const productCard = document.querySelector(".product-card")
 
@@ -40,11 +65,41 @@ const API_GAME = `https://rawg.io/api/games?token&key=26b25919da7f43a3a316e35eb4
 
 
 function showRcmGames(data) {
-  rcmContainer.innerHTML = ""
-  console.log(data);
-  for(let i = 0; i < 8; i++) {
-    rcmContainer.innerHTML +=
-    `<div class="col-md-3 col-sm-6 col-6">
+  rcmContainer1.innerHTML = ""
+  rcmContainer2.innerHTML = ""
+  for(let i = 0; i < 5; i++) {
+    rcmContainer1.innerHTML +=
+    `<div class="col-md col-sm-6 col-6">
+    <div class="product-card">
+    <a href="${checkLogin("products")}#${data[i].id}">
+      <img
+        src= ${data[i].background_image}
+        alt=""
+      />
+      
+    </a>
+      <div class="product-info">
+      <a href="${checkLogin("products")}#${data[i].id}">
+        <div class="info-name-price">
+          <h5>${data[i].name}</h5>
+        </div>
+        <div class="price-rating d-flex justify-content-between align-items-center">
+        <h6>Price: <span>€${getPrice(data[i])}</span></h6>
+        <div class="product-rating ${getClassByRate(metacriticRate(data[i].metacritic))} d-flex align-items-center justify-content-center"><span ${getClassByRate(metacriticRate(data[i].metacritic))}>${metacriticRate(data[i].metacritic)}</span></div>
+        </div>
+        </a>
+      </div>
+      <div class="product-overview">
+      <p>Genres: ${showGenre(data[i].genres)}</p>
+      <div class="platforms-icon">${showPlatforms(data[i].platforms)}  
+      <span class="add-to-cart"><i class="bi bi-cart-plus-fill"></i></span>
+    </div>
+    </div>
+  </div>`
+  }
+  for(let i = 5; i < 10; i++) {
+    rcmContainer2.innerHTML +=
+    `<div class="col-md col-sm-6 col-6">
     <div class="product-card">
     <a href="${checkLogin("products")}#${data[i].id}">
       <img
@@ -75,9 +130,9 @@ function showRcmGames(data) {
 }
 function showHotGames(data) {
   hotContainer.innerHTML = ""
-  for(let i = 8; i < 12; i++) {
+  for(let i = 10; i < 15; i++) {
     hotContainer.innerHTML +=
-    `<div class="col-md-3 col-sm-6 col-6">
+    `<div class="col-md col-sm-6 col-6">
     <div class="product-card">
     <a href="${checkLogin("products")}#${data[i].id}">
       <img
@@ -199,18 +254,6 @@ function showPlatforms(platform) {
 
 getGames(API_GAME)
 
-// // event click add-to-cart-icon start
-// function addToCart() {
-//   const addToCartIcon = document.querySelectorAll(".add-to-cart")
-//   addToCartIcon.forEach((item) => {
-//     item.addEventListener('click', (e) => {
-//       item.style.color = "#FAD318"
-//     })
-//   })
-// }
-// click add to cart icon end
-
-
 // banner click
 const rcmBanner = document.querySelector(".rcm-banner")
 const hotGameBanner = document.querySelector(".hot-game-banner")
@@ -232,4 +275,14 @@ categoriesItemArr.forEach(item => {
   item.addEventListener("click", (e) => {
     location.assign(`${checkLogin("allgames")}`)
   })
+});
+
+// btn-nav
+const btn_nav = document.querySelectorAll(".btn-nav")
+console.log(btn_nav);
+btn_nav.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    location.assign(`${checkLogin("allgames")}` )
+    }
+  )
 });

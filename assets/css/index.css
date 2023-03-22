@@ -6,7 +6,7 @@ body {
 }
 
 /* slider start */
-.owl-carousel {
+.main-slider {
     color: black;
 }
 .slider {
@@ -44,7 +44,7 @@ body {
     left: 0px;
     right: 0px;
 }
-.owl-carousel .owl-item img {
+.main-slider .owl-item img {
     height: 550px;
     object-fit: cover;
 }
@@ -59,6 +59,19 @@ body {
 }
 .rcm-banner {
     cursor: pointer;
+}
+.rcm-banner a {
+    position: relative;
+}
+.rcm-banner a h4 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    left: 20px;
 }
 .rcm-banner img:hover {
     opacity: 0.8;
@@ -76,7 +89,7 @@ body {
 }
 .product-card img {
     width: 100%;
-    height: 320px;
+    height: 280px;
     object-fit: cover;
 }
 .info-name-price {
@@ -180,6 +193,19 @@ body {
     padding-top: 24px;
     background-color: #311178;
 }
+.hot-game-banner a {
+    position: relative;
+}
+.hot-game a h4 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    left: 20px;
+}
 
 .hot-game-banner {
     /* margin-top: 12px; */
@@ -197,6 +223,19 @@ body {
     padding-top: 24px; 
     padding-bottom: 24px;
     /* padding-top: 24px; */
+}
+.coming-soon-banner a {
+    position: relative;
+}
+.coming-soon-banner a h4 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    left: 20px;
 }
 .coming-soon-banner img {
     width: 100%;
@@ -240,6 +279,7 @@ body {
     padding: 20px;
     font-size: 14px;
     text-align: center;
+    font-weight: 600;
 }
 .coming-soon-pub-product:hover .pub-product-overview  {
     transform: translateY(0);
@@ -253,7 +293,19 @@ body {
     padding-top: 24px; 
     padding-bottom: 24px;
 }
-
+.categories-banner{
+    position: relative;
+}
+.categories-banner h4 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    left: 20px;
+}
 /* categories end */
 
 /* community banner start */
@@ -285,6 +337,167 @@ body {
 }
 /* community end */
 
+/* kol quote start */
+.kol-container {
+    height: 100%;
+    margin-bottom:20px ;
+}
+.kol-container {
+    display: flex;
+    align-items: center;
+}
+.kol-picture {
+    height: 300px;
+    width: auto;
+}
+.kol-cmt {
+    padding: 20px;
+    font-size: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quote {
+    font-size: 28px;
+}
+.quote-left {
+    width: 100%;
+    text-align: left;
+    color: #FAD318;
+}
+.quote-right {
+    width: 100%;
+    text-align: left;
+    transform: rotate(180deg);
+    color: #FAD318;
+}
+.quote > span {
+    font-size: 30px;
+    font-weight: 600;
+}
+.comment-item {
+    width: 100%;
+    height: 300px;
+    background-color: #311178;
+    box-shadow: 0 7px 15px 0 rgba(0,0,0,.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    gap: 5px;
+}
+.comment-item p {
+    margin: 0;
+}
+.owl-carousel .comment-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.comment-name {
+    margin: 0;
+}
+.comment-star {
+    color: #FAD318;
+}
+.cmt-date {
+    font-size: 12px;
+    color: #ccc;
+}
+.cmt-text {
+    font-size: 14px;
+}
+.review-container h5 {
+    color: white;
+    font-weight: 600;
+}
+/* comment end */
+
+/* email start */
+.email-container {
+    position: relative;
+}
+.email-container:hover img {
+    transform: scale(1.2);
+    overflow: hidden;
+}
+.email-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 3s ease;
+}
+.email-container {
+    margin-top: 30px;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.sign-up-news {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    color: white;
+    background-color: #DA6110;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+.sign-up-news h4 {
+    font-size: 30px;
+    font-weight: 700;
+}
+.sign-up-news p {
+    font-size: 14px;
+}
+.sign-up-news div {
+    width: 80%;
+    position: relative;
+}
+.sign-up-news div input {
+    width: 100%;
+    outline: none;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+}
+.sign-up-news div button {
+    background-color: #c89551;
+    position: absolute;
+    width: 20%;
+    outline: none;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    right: 0px;
+}
+/* email end */
+
+
+/* button start */
+.btn-nav {
+    width: 200px;
+    height: 40px;
+    background: none;
+    border: 1px solid;
+    color: white;
+    font-weight: 700;
+}
+.btn-nav:hover {
+    background-color: rgba(0,0,0,.3);
+    border-color: #fad318;
+}
+
 
 /* user dropdown */
 .dropdown-item:hover {
@@ -295,7 +508,7 @@ body {
     background-color: #1F0A4E;
     color: #FAD318;
 }
-
+/* user dropdown end */
 
 /* categories item */
 .categories-banner {
@@ -319,10 +532,42 @@ body {
     background-color:   #32117d;
     cursor: pointer;
 }
+/* categories item end */
+
+
+/* responsive */
+@media (max-width: 1286px) {
+    .product-card img {
+        height: 250px;
+    }
+    .info-name-price h5 {
+        font-size: 18px;
+    }
+}
+@media (max-width: 1200px) {
+    .product-card img {
+        height: 240px;
+    }
+    .product-card .product-info a {
+        height: 120px;
+    }
+    .info-name-price h5 {
+        font-size: 15px;
+    }
+    .rcm-product-card-container1 > div:last-child {
+        display: none;
+    }
+    .rcm-product-card-container2 > div:last-child {
+        display: none;
+    }
+    .hot-game-container > div:last-child {
+        display: none;
+    }
+  }
 
 @media (max-width: 1176px) {
     .product-card img {
-        height: 260px;
+        height: 240px;
     }
     .product-card .product-info a {
         height: 100px;
@@ -344,6 +589,43 @@ body {
         gap: 10px;
     }
 }
+@media (max-width:992px) {
+    .product-card img {
+        height: 200px ;
+    }
+    .product-card .product-info a {
+        height: 120px;
+    }
+    .info-name-price h5 {
+        font-size: 14px ;
+    }
+    .rcm-banner > a > img {
+        height: 50px;
+        object-fit: cover;
+        object-position: left;
+    }
+    .hot-game-banner > a > img {
+        height: 50px;
+        object-fit: cover;
+        object-position: left;
+    }
+    .coming-soon-banner > a > img {
+        height: 50px;
+        object-fit: cover;
+        object-position: left;
+    }
+    .categories-banner > img {
+        height: 50px;
+        object-fit: cover;
+        object-position: left;
+    }
+    .coming-soon-pub-product img {
+        height: 180px;
+    }
+    .coming-soon-pub img {
+        height: 180px;
+    }
+}
 @media (max-width:768px ) {
     .coming-soon-pub {
         margin-bottom: 20px;
@@ -356,7 +638,88 @@ body {
         width: 30px;
         height: 30px;
     }
-    .owl-carousel .owl-item img {
+    .main-slider .owl-item img {
         height: 300px;
     }
+    .kol-picture {
+        height: 180px;
+    }
+    .quote {
+        font-size: 20px;
+    }
+    .cmt-text {
+        font-size: 12px;
+    }
+    .comment-name {
+        font-size: 18px;
+    }
+}
+@media (max-width:767px ) {
+    .coming-soon-pub-product img {
+        height: 240px;
+    }
+    .coming-soon-pub img {
+        height: 240px;
+    }
+    .product-card img {
+        height: 300px;
+    }
+}
+@media (max-width: 650px) {
+    .sign-up-news p {
+        font-size: 10px;
+    }
+    .sign-up-news h4 {
+        font-size: 20px;
+    }
+    .sign-up-news div button {
+        font-size: 10px;
+    }
+    .sign-up-news div {
+        width: 100%;
+    }
+    .sign-up-news {
+        padding: 10px;
+    }
+}
+@media (max-width: 576px) {
+    .categories-item {
+        font-size: 20px;
+        gap: 20px;
+    }
+    .quote {
+        font-size: 12px;
+    }
+    .quote-left, .quote-right {
+        font-size: 20px;
+    }
+}
+@media (max-width: 465px) {
+    .coming-soon-pub-product img {
+        height: 180px;
+    }
+    .product-card img {
+        height: 200px;
+    }
+    .sign-up-news div button {
+        font-size: 8px;
+    }
+    .sign-up-news div {
+        width: 100%;
+    }
+}
+@media (max-width: 370px) {
+    .product-card img {
+        height: 150px;
+    }
+    .rcm-banner a h4 {
+        font-size: 15px;
+    }
+
+}
+@media (max-width: 320px) {
+    .kol-picture {
+        height: 120px;
+    } 
+    
 }

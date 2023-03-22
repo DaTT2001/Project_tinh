@@ -18,3 +18,14 @@
     color: white;
 }
 /* footer end */
+
+@media (max-width: 425px) {
+    .footer-content p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 323px) {
+    .footer-content p {
+        font-size: 10px;
+    }
+}

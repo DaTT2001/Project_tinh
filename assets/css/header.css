@@ -383,7 +383,7 @@
         left: 0;
         border: none;
         border-radius: 0px;
-        width: 100%;
+        width: 100vw;
         height: 40px;
     }
     .search-input-container {

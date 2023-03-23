@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #4618AC !important;
+    background-color: var(--main-color) !important;
 }
 
 /* slider start */
@@ -12,7 +12,7 @@ body {
 .slider {
     width: 100%;
     height: 100%;
-    background-color: #4618AC;
+    background-color: var(--main-color);
     margin-top: 60px;
 }
 .owl-nav button {
@@ -54,7 +54,7 @@ body {
 /* recommended start */
 .recommended {
     margin-top: 24px;
-    background-color: #4618AC;
+    background-color: var(--main-color);
     margin-bottom: 24px;
 }
 .rcm-banner {
@@ -84,7 +84,7 @@ body {
     position: relative;
     margin-bottom: 24px;
     width: 100%;
-    background-color: #1F0A4E;
+    background-color: var(--secondary-color);
     box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
 }
 .product-card img {
@@ -191,7 +191,7 @@ body {
 .hot-game {
     padding-bottom: 24px;
     padding-top: 24px;
-    background-color: #311178;
+    /* background-color: var(--secondary-color); */
 }
 .hot-game-banner a {
     position: relative;
@@ -219,7 +219,7 @@ body {
 
 /* coming soon banner start */
 .coming-soon {
-    background-color: #4618AC;
+    background-color: var(--main-color);
     padding-top: 24px; 
     padding-bottom: 24px;
     /* padding-top: 24px; */
@@ -289,7 +289,7 @@ body {
 
 /* categories-start */
 .categories {
-    background-color: #311178;
+    background-color: var(--secondary-color);
     padding-top: 24px; 
     padding-bottom: 24px;
 }
@@ -380,7 +380,7 @@ body {
 .comment-item {
     width: 100%;
     height: 300px;
-    background-color: #311178;
+    background-color: var(--secondary-color);
     box-shadow: 0 7px 15px 0 rgba(0,0,0,.2);
     padding: 20px;
     display: flex;
@@ -501,12 +501,12 @@ body {
 
 /* user dropdown */
 .dropdown-item:hover {
-    color: #311178!important;
+    color: var(--secondary-color)!important;
 }
 
 .nav-bar button:first-child{
-    background-color: #1F0A4E;
     color: #FAD318;
+    border-bottom: 3px solid;
 }
 /* user dropdown end */
 

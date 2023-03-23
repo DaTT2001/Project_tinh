@@ -2,11 +2,11 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #4618AC !important;
+    background-color: var(--main-color) !important;
 }
 .header,.header-top-bar {
     height: 100px;
-    background-color: #3D1597;
+    background-color: var(--secondary-color);
 }
 .content {
     margin-top: 30px;
@@ -17,7 +17,7 @@ body {
     min-height: 300px;
     max-height: 700px;
     padding: 30px;
-    background-color: #3D1597;
+    background-color: var(--secondary-color);
 }
 .content .cart-container {
     max-height: 600px;
@@ -26,7 +26,7 @@ body {
     padding: 0;
 }
 .cart-container .cart-item {
-    background-color: #361285;
+    background-color: var(--main-color);
 }
 
 .cart-item img {
@@ -107,7 +107,7 @@ body {
     width: 75%;
     height: 300px;
     padding: 30px;
-    background-color: #3D1597;
+    background-color: var(--secondary-color);
 }
 .total-price h6 {
     color: white;
@@ -121,6 +121,7 @@ body {
     border: none;
     font-weight: 700;
     height: 35px;
+    margin-bottom: 10px;
 }
 .checkout:hover {
     background-color: #F5A623;
@@ -148,9 +149,6 @@ body {
     height: 30px;
     border: none;
     outline: none;
-    color: #ada1c8;
-    background: rgba(0,0,0,.2);
-    box-shadow: inset 0 1px 3px #1f0a4e;
 }
 .discount-code-submit {
     margin-top: 20px;
@@ -182,7 +180,7 @@ body {
     display: block;
 }
 .modal-content {
-  background-color:#4618AC;
+  background-color:var(--main-color);
   margin: 15% auto;
   padding: 20px;
   /* border: 1px solid #888; */
@@ -269,4 +267,46 @@ body {
 }
 .logo {
     cursor: pointer;
+}
+
+/* responsive */
+@media (max-width: 1200px) {
+    .total-price {
+        width: 100%;
+    }
+}
+@media (max-width: 992px) {
+    .checkout {
+        font-size: 12px;
+    }
+}
+@media (max-width: 768px) {
+    .cart-container1 {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 410px) {
+    .cart-item-info1 a {
+        font-size: 12px;
+    }   
+    .cart-item {
+        display: block;
+    }
+    .cart-item-price1 {
+        height: 100%;
+    }
+    .cart-item-price1 span:first-child {
+        line-height: 100%;
+    }
+    .trash-icon {
+        top: 0;
+        right: 0;
+    }
+}
+@media (max-width: 300px) {
+    .add-minus {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+    }
 }

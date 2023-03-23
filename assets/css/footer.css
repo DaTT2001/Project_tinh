@@ -2,7 +2,7 @@
 .footer {
     padding-bottom: 24px;
     width: 100%;
-    background-color: #1C0A45;
+    background-color: var(--secondary-color);
 }
 .footer .payment-type {
     background-color: white;

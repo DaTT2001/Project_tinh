@@ -44,7 +44,7 @@ function showGameList(data) {
     listGameContainer.innerHTML =""
     for(let i = 0; i < data.length; i++) {
         listGameContainer.innerHTML +=
-          `<div class="col-md-3 col-sm-6 col-12">
+          `<div class="col-md-3 col-sm-6 col-12 d-flex justify-content-center">
           <div class="product-card">
           <a href="${checkLogin("products")}#${data[i].id}">
             <img
@@ -351,3 +351,23 @@ async function checkCart(uid) {
         }
   }
 }
+
+
+
+// logic responsive 
+const filter_icon = document.querySelector(".filter-icon")
+const filter_table = document.querySelector(".filter-table")
+const filter_close_icon = document.querySelector(".filter-table-close")
+
+document.addEventListener("click", (e) => {
+  if(filter_icon.contains(e.target)) {
+    console.log("a");
+    filter_table.classList.add("active")
+  }
+  else if(!filter_table.contains(e.target)) {
+    filter_table.classList.remove("active")
+  }
+})
+filter_close_icon.addEventListener("click", (e) => {
+  filter_table.classList.remove("active")
+})

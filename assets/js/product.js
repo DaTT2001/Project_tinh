@@ -59,10 +59,10 @@ function getClassByRate(rating) {
 function showGame(data) {
     productInfoArea.innerHTML = ""
     productInfoArea.innerHTML = `
-    <div class="col-3 product-img">
+    <div class="col-md-3 col-sm-6 col-12 product-img">
     <img src="${data.background_image}" alt="" width="100%">
 </div>
-<div class="col-9 product-info d-flex flex-column justify-content-between">
+<div class="col-md-9 col-sm-6 col-12 product-info d-flex flex-column justify-content-between">
     <div class="product-name-meta d-flex justify-content-between">
         <h2>${data.name}</h2>
         <div class="product-rating d-flex align-items-center justify-content-center ${getClassByRate(data.metacritic)}">

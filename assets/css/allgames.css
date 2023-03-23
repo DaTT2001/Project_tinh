@@ -1,12 +1,9 @@
-.nav-bar div a:first-child {
-    background-color: #1F0A4E;
-    color: #FAD318;
-}
+
 body {
-    background-color: #4618AC;
+    background-color: var(--main-color);
 }
 .products-container {
-    background-color: #4618AC;
+    background-color: var(--main-color);
     /* margin-top: 60px; */
 }
 .allgames-img {
@@ -50,7 +47,7 @@ input:focus {
 }
 .filter-table {
     margin-top: 20px;
-    background-color: #5825CC;
+    background-color: var(--secondary-color);
     color: white;
     font-size: 16px;
     padding: 20px;
@@ -62,12 +59,9 @@ input:focus {
     flex-direction: column;
 }
 .filter-search input {
-    background-color: #5825CC;
-    color: #ada1c8;
+    background-color: white;
     width: 100%;
     height: 40px;
-    background: rgba(0,0,0,.2);
-    box-shadow: inset 0 1px 3px #1f0a4e;
     border: none;
     margin-left: auto;
     margin-right: auto;
@@ -158,7 +152,7 @@ input:focus {
     position: relative;
     margin-bottom: 24px;
     width: 100%;
-    background-color: #1F0A4E;
+    background-color: var(--secondary-color);
     box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
 }
 .product-card img {
@@ -259,8 +253,8 @@ input:focus {
 
 
 .nav-bar button:nth-child(2){
-    background-color: #1F0A4E;
     color: #FAD318;
+    border-bottom: 3px solid;
 }
 
 .all_button_pages {
@@ -304,4 +298,105 @@ input:focus {
 }
 .footer {
     margin-top: 30px;
+}
+.filter-table-close {
+    display: none;
+}
+.filter-icon {
+    display: none;
+    color: black;
+    position: fixed;
+    border-radius: 0 40px 40px 0;
+    padding: 20px 10px;
+    left: 0;
+    font-size: 20px;
+    transform: translateY(-50%);
+    top: 50%;
+    z-index: 998;
+    background-color: white;
+    cursor: pointer;
+}
+/* reponsive */
+@media (max-width: 1204px) {
+    .product-card img {
+        height: 200px;
+    }
+    .info-name-price p {
+        font-size: 13px;
+    }
+    .price-rating h6 {
+        font-size: 14px;
+    }
+    .product-rating {
+        width: 30px;
+        height: 30px;
+    }
+    .product-card .product-info a {
+        height: 120px;
+    }
+}
+@media (max-width: 992px) {
+    .type label {
+        font-size: 14px;
+    }
+    .product-card img {
+        height: 160px;
+    }
+    .info-name-price p {
+        font-size: 10px;
+    }
+    .product-card .product-info a {
+        height: 100px;
+    }
+    .price-rating h6 span {
+        font-size: 10px;
+    }
+    .product-rating {
+        width: 20px;
+        height: 20px;
+    }
+    .product-rating span {
+        font-size: 12px
+    }
+}
+@media (max-width: 768px) {
+    .filter-icon {
+        display: block;
+    }
+    .filter-table {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    padding-bottom: 125px;
+    z-index: 999;
+    margin-top: 0;
+    }
+    .filter-table.active {
+        display: block;
+    }
+    .filter-table-close {
+        display: block;
+        float: right;
+    }
+    .filter-table-close:hover {
+        color: red;
+        cursor: pointer;
+    }
+    .product-card img {
+        height: 220px;
+    }
+    .info-name-price p {
+        font-size: 14px;
+    }
+    .price-rating h6 span {
+        font-size: 14px;
+    }
+}
+@media (max-width: 576px) {
+    .product-card {
+        width: 80%;
+    }
 }

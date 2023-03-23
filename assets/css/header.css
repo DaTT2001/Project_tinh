@@ -25,7 +25,7 @@
     outline: none;
 }
 .header-top-bar {
-    background-color: #311178;
+    background-color: var(--secondary-color);
     position: fixed;
     z-index: 999;
     width: 100%;
@@ -105,7 +105,7 @@
 
 /* nav bar start */
 .header-nav-bar {
-    /* background-color: #311178; */
+    /* background-color: var(--secondary-color); */
 }
 /* .nav-bar {
     height: 50px;
@@ -118,11 +118,12 @@
     font-weight: 500;
     letter-spacing: 0.5px;
     padding: 0 20px;
-    line-height: 60px;
+    line-height: 57px;
+    border-bottom: 3px solid var(--secondary-color);
 }
 .nav-bar > button:hover {
-    background-color: #1F0A4E;
     color: #FAD318;
+    border-bottom: 3px solid;
 }
 .logo {
     cursor: pointer;
@@ -146,7 +147,9 @@
     right: -20%;
     background-color: red;
     border-radius: 50px;
-    opacity: 0.6;
+}
+.dropdown-item:hover {
+    background-color: var(--span-color) !important;
 }
 .cart-icon {
     position: relative;
@@ -155,11 +158,12 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    background-color: #5825CC;
+    background-color: var(--main-color);
     width: 400px;
     /* height: 100px; */
     right: 0px;
     z-index: 999;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
 .cart-popup.active {
     display: flex
@@ -262,12 +266,14 @@
   ::-webkit-scrollbar-thumb:hover {
     background-color: #555;
   }
-
   .nav-bar-icon i{
     font-size: 30px;
     color: white;
     cursor: pointer;
     line-height: 60px;
+  }
+  .nav-bar-icon i.active {
+    color: var(--span-color) ;
   }
   .nav-bar-icon {
     display: none;
@@ -299,7 +305,7 @@
         position: absolute;
         top: 60px;
         left: 0px;
-        background-color: #4618AC;
+        background-color: var(--main-color);
         opacity: 1;
         width: 40%;
         height: 100vh;
@@ -311,10 +317,6 @@
     .nav-bar button {
         width: 100%;
         text-align: left;
-    }
-    .nav-bar button:hover {
-        color: #e9e8f7;
-        background: #32117d;
     }
     .search-input-container {
         width: 40%;
@@ -339,7 +341,7 @@
         position: absolute;
         top: 60px;
         left: 0px;
-        background-color: #4618AC;
+        background-color: var(--main-color);
         opacity: 1;
         width: 40%;
         height: 100vh;

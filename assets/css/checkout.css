@@ -3,18 +3,18 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #4618AC !important;
+    background-color: var(--main-color) !important;
 }
 .header,.header-top-bar {
     height: 100px;
-    background-color: #3D1597;
+    background-color: var(--secondary-color);
 }
 .content {
     margin-top: 30px;
     margin-bottom: 30px;
 }
 #checkout {
-    background-color: #3D1597;
+    background-color: var(--secondary-color);
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@ body {
 #checkout input {
     height: 40px;
     margin-bottom: 15px;
-    background-color: #4618AC;
+    background-color: var(--main-color);
     border: 1px solid rgba(0,0,0,0);
     border-radius: 0;
     color: white;   
@@ -39,7 +39,7 @@ body {
 } */
 #checkout textarea {
     height: 80px;
-    background-color: #4618AC;
+    background-color: var(--main-color);
     border: 1px solid rgba(0,0,0,0);
     border-radius: 0;
     color: white;   
@@ -68,7 +68,7 @@ body {
 #checkout select {
     height: 40px;
     outline: none;
-    background-color: #4618AC;
+    background-color: var(--main-color);
     color: white;
     border: none;
 }
@@ -85,7 +85,7 @@ body {
     width: 70%;    
     padding: 30px;
     color: white;
-    background-color: #3D1597;
+    background-color: var(--secondary-color);
     gap: 20px;
 }
 .payment-container h6 {
@@ -110,7 +110,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #4618AC;
+    background-color: var(--main-color);
     height: 60px;
     padding-left: 20px;
     padding-right: 20px;
@@ -338,4 +338,35 @@ body {
 }
 .logo {
     cursor: pointer;
+}
+
+
+
+/* responsive */
+@media (max-width: 992px) {
+    .payment-container {
+        width: 100%;
+    }
+    #checkout {
+        width: 100%;
+    }
+
+
+}
+@media (max-width: 768px) {
+    .return-carts {
+        font-size: 15px;
+        margin-left: 20px;
+    }
+}
+@media (max-width: 576px) {
+    .header-checkout {
+        font-size: 16px;
+    }
+}
+@media (max-width: 520px) {
+    .return-carts {
+        font-size: 12px;
+        margin-left: 10px;
+    }
 }

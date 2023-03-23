@@ -199,6 +199,7 @@ const personIcon = document.querySelector(".person-icon")
 const userLogin = document.querySelector(".user-login")
 navbarIcon.addEventListener("click", (e) => {
   navbar.classList.toggle("active")
+  navbarIcon.classList.toggle("active")
 })
 searchIcon.addEventListener("click", (e) => {
   searchInputContainer.classList.add("active")

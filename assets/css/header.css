@@ -28,7 +28,7 @@
     background-color: var(--secondary-color);
     position: fixed;
     z-index: 999;
-    width: 100%;
+    width: 100vw;
     top: 0px;
     transition: 0.5 ease;
 }

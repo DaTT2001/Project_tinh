@@ -32,11 +32,20 @@ async function getUID(url) {
   const data = await res.json();
   const userData = data[`${uid}`];
   user.innerHTML = `
-            <a class="nav-link dropdown-toggle person-login person-setting d-flex" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">                <p>${userData.username}</p>
+            <a class="nav-link dropdown-toggle person-login person-setting d-flex" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <p>${userData.username}</p>
             </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="./index.html">Log out</a></li>
-              </ul>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="">My profile</a></li>
+              <li><a class="dropdown-item" href="">Add funds</a></li>
+              <li><a class="dropdown-item" href="">Dashboard</a></li>
+              <li><a class="dropdown-item" href="./index.html">Log out</a></li>
+            </ul>
+              <li><a class="dropdown-item" href="">${userData.username}</a></li>
+              <li><a class="dropdown-item" href="">My profile</a></li>
+              <li><a class="dropdown-item" href="">Add funds</a></li>
+              <li><a class="dropdown-item" href="">Dashboard</a></li>
+              <li><a class="dropdown-item" href="./index.html">Log out</a></li>
         `;
 }
 getUID(API_FIREBASE)
@@ -175,15 +184,23 @@ const cartIcon = document.querySelector(".cart-icon a")
 const cartPopupContentEl = document.querySelector(".cart-popup")
 const cartPopupBtnEl = document.getElementById("view-cart")
 const closeIcon =  document.querySelector(".cart-popup-header > i")
-cartIcon.addEventListener("click", (e) => {
-  cartPopupContentEl.classList.toggle("active")
-})
+
 cartPopupBtnEl.addEventListener("click", (e) => {
   window.location.assign(`${checkLogin("carts")}`)
 })
 closeIcon.addEventListener("click", (e) => {
   cartPopupContentEl.classList.toggle("active")
 })
+
+document.addEventListener("click", (e) => {
+  if(cartIcon.contains(e.target)) {
+    cartPopupContentEl.classList.toggle("active")
+  }
+  else {
+    cartPopupContentEl.classList.remove("active")
+  }
+})
+
 // console.log(cartIcon);
 // cartIcon.href = `${checkLogin("carts")}`
 
@@ -197,10 +214,7 @@ const searchInputContainer = document.querySelector(".search-input")
 const xIcon = document.querySelector(".x-icon")
 const personIcon = document.querySelector(".person-icon")
 const userLogin = document.querySelector(".user-login")
-navbarIcon.addEventListener("click", (e) => {
-  navbar.classList.toggle("active")
-  navbarIcon.classList.toggle("active")
-})
+
 searchIcon.addEventListener("click", (e) => {
   searchInputContainer.classList.add("active")
   searchInput.classList.add("active")
@@ -215,7 +229,23 @@ xIcon.addEventListener("click", (e) => {
   searchInputContainer.value = ""
   searchResultArea.innerHTML = ""
 })
-personIcon.addEventListener("click", (e) => {
-  userLogin.classList.toggle("active")
-})
 
+document.addEventListener("click", (e) => {
+  if(personIcon.contains(e.target)) {
+    userLogin.classList.toggle("active")
+    personIcon.classList.toggle("active")
+  }
+  else if(!personIcon.contains(e.target)) {
+    userLogin.classList.remove("active")
+    personIcon.classList.remove("active")
+  }
+})
+document.addEventListener("click", (e) => {
+  if(navbarIcon.contains(e.target)) {
+    navbar.classList.toggle("active")
+    navbarIcon.classList.toggle("active")
+  }
+  else if(!navbarIcon.contains(e.target)) {
+    navbar.classList.remove("active")
+  }
+})

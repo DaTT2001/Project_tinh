@@ -294,7 +294,9 @@
     height: 50px;
     object-fit: cover;
   }
-
+  .user-login > li {
+    display: none;
+  }
   @media (max-width: 1191px) {
     .nav-bar-icon {
         display: block;
@@ -355,8 +357,7 @@
         text-align: left;
     }
     .nav-bar button:hover {
-        color: #e9e8f7;
-        background: #32117d;
+        color: var(--span-color);
     }
     .search-input-container {
         width: 50%;
@@ -418,7 +419,7 @@
         top: 60px;
         right: 0;
         flex-direction: column;
-        background-color: #32117d;
+        background-color: var(--main-color);
         width: 20%;
     }
     .user-login.active {
@@ -435,6 +436,15 @@
     }
     .cart-popup {
         width: 300px;
+    }
+    .user-login > li {
+        display: block;
+    }
+    .user-login > a {
+        display: none !important;
+    }
+    .person-icon.active {
+        color: var(--span-color);
     }
   }
   @media (max-width: 450px) {

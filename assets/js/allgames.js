@@ -361,7 +361,6 @@ const filter_close_icon = document.querySelector(".filter-table-close")
 
 document.addEventListener("click", (e) => {
   if(filter_icon.contains(e.target)) {
-    console.log("a");
     filter_table.classList.add("active")
   }
   else if(!filter_table.contains(e.target)) {

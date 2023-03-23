@@ -370,3 +370,18 @@ body {
         margin-left: 10px;
     }
 }
+@media (max-width: 364px) {
+    .popup {
+        width: 250px;
+        height: 280px;
+    }
+    .popup .description {
+        font-size: 12px;
+    }
+    .popup .title {
+        font-size: 20px;
+    }
+    .popup .dismiss-btn button {
+        font-size: 12px;
+    }
+}

@@ -31,6 +31,7 @@
   </head>
 
   <body>
+    <!-- header start -->
     <div class="header-top-bar">
       <div class="top-bar d-flex justify-content-between">
         <div class="nav-bar-icon">
@@ -43,7 +44,6 @@
         </div>
           <form class="search-input-container" onsubmit="redirectToAllProduct()">
             <input class="search-input" name="search_input" type="text" placeholder="Search"/>
-            <i class="bi bi-search search-icon"></i>
             <i class="bi bi-x x-icon"></i>
             <div class="search-result-area">
             </div>
@@ -63,6 +63,7 @@
         <div
           class="function-btn"
         >
+        <i class="bi bi-search search-icon"></i>
           <!-- <a href="" class="bi bi-heart func-icon"></a> -->
           <div class="cart-icon">
             <a class="bi bi-cart3">
@@ -92,7 +93,7 @@
             <a class="person-login" href="./login.html">
               <p>Login</p>
             </a>
-            <span>|</span>
+            <span><i class="bi bi-slash-lg"></i></span>
             <a href="./signup.html" class="person-login">
               <p>Register</p>
             </a>

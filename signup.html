@@ -237,7 +237,7 @@
           var email = document.getElementById("email").value;
           var username = document.getElementById("username").value;
           createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
+             .then((userCredential) => {
               // Signed in
               const user = userCredential.user;
               // console.log(user);
@@ -247,7 +247,6 @@
                 password: password,
               });
 
-              // ...
               alert("User create complete! Please log in now!");
             })
             .catch((error) => {
@@ -276,7 +275,15 @@
         cfpassErr.classList.remove("active")
       })
       
-
+      // async function saveUserNameToFireBase() {
+      //   const user = userCredential.user;
+      //   await set(ref(database, "users/" + user.uid), {
+      //           username: username,
+      //           email: email,
+      //           password: password,
+      //         });
+      //   window.location.href = "./login.html"
+      // }
     </script>
   </body>
 </html>

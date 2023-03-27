@@ -17,9 +17,12 @@ body {
     padding: 30px;
     width: 400px;
     color: white;
+    height: 100%;
 }
 .main-login {
     margin-top: 50px;
+    display: flex;
+    align-items: center;
 }
 .login-text h1 {
     font-size: 88px;
@@ -74,6 +77,16 @@ body {
 .login {
     display: flex;
     justify-content: flex-end;
+}
+.forgot-pass {
+    font-size: 12px;
+    color: var(--span-color);
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+}
+.forgot-pass:hover {
+    color: #CCAE1B;
 }
 @media (max-width: 768px) {
     .logo {

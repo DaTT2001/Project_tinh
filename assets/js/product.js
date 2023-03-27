@@ -656,3 +656,13 @@ async function postCartToFirebaseAndRedirect(uid, key , value) {
   window.location.assign(`${checkLogin("carts")}`)
   }
 }
+
+
+
+
+
+
+// hash change
+window.addEventListener("hashchange", function() {
+  location.reload();
+});

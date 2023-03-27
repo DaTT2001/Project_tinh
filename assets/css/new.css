@@ -1,12 +1,13 @@
 .nav-bar button:nth-child(3){
-    background-color: #1F0A4E;
     color: #FAD318;
+    border-bottom: 3px solid;
 }
 .nav-bar button:nth-child(2) {
     background: none;
     color: white;
+    border: none;
 }
 .nav-bar button:nth-child(2):hover {
-    background-color: #1F0A4E;
     color: #FAD318;
+    border-bottom: 3px solid;
 }

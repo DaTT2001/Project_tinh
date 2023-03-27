@@ -38,6 +38,7 @@ async function getGame(url) {
     buyBtn.addEventListener("click", (e) => {
       postCartToFirebaseAndRedirect(location.search.slice(6), data.id, 1)
     }) 
+    document.title = `Dc Gaming | ${data.name}`
     
 }
 getGame(API_GAME)

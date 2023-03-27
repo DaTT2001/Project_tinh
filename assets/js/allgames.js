@@ -145,18 +145,24 @@ nextPage(API_GAME+`&ordering=${selectArea.value}`)
 
 
 function searchListGames() {
+    const numberPages = document.querySelector(".number-pages")
     let currentAPI = API_GAME
     selectArea.addEventListener("change", (e) => {
       const genres = getGenres(checkBoxes)
       currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
       + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}` 
-      getGames(currentAPI)    
+      getGames(currentAPI) 
+      numberPages.innerHTML = ""
+      numOfPages(currentAPI)   
     })
     searchArea.addEventListener("input", (e) => {
         const genres = getGenres(checkBoxes)
         currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
         + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`
       getGames(currentAPI)   
+      numberPages.innerHTML = ""
+      numOfPages(currentAPI)   
+
 
       })
     checkBoxes.forEach((checkbox) => {
@@ -165,7 +171,9 @@ function searchListGames() {
         currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
       + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`
       getGames(currentAPI)   
-
+      numberPages.innerHTML = ""
+      numOfPages(currentAPI)   
+      
       })
     })
     checkBoxesPlatforms.forEach((checkbox) => {
@@ -174,7 +182,9 @@ function searchListGames() {
         currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
       + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`
         getGames(currentAPI)
-
+      numberPages.innerHTML = ""
+      console.log(currentAPI);
+        numOfPages(currentAPI)   
       })
     })
     metacriticArr[0].addEventListener("input", (e) => {
@@ -182,12 +192,17 @@ function searchListGames() {
         currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
       + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`
         getGames(currentAPI)
+      numberPages.innerHTML = ""
+        numOfPages(currentAPI)   
+
       })
     metacriticArr[1].addEventListener("input", (e) => {
         const genres = getGenres(checkBoxes)        
         currentAPI = API_GAME + `&search=${getProductName()}` + genres + getMetacritic(metacriticArr)
       + getPlatforms(checkBoxesPlatforms) + `&ordering=${selectArea.value}`
         getGames(currentAPI)
+      numberPages.innerHTML = ""
+      numOfPages(currentAPI)   
       })
   }
 

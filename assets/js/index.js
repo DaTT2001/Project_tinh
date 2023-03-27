@@ -286,3 +286,25 @@ btn_nav.forEach(btn => {
     }
   )
 });
+
+
+
+// slider redirect
+const slider = document.querySelectorAll(".slider a")
+console.log(slider);
+slider[0].href = `${checkLogin("products")}#32`
+slider[1].href = `${checkLogin("products")}#881576`
+slider[2].href = `${checkLogin("products")}#452639`
+slider[3].href = `${checkLogin("products")}#906547`
+slider[4].href = `${checkLogin("products")}#799265`
+
+
+function checkLogin(page) {
+  let uid = window.location.search.split("=")[1];
+  if(!uid) {
+    return "./login.html"
+  }
+  else {
+    return `./${page}.html?user=${uid}`
+  }
+}

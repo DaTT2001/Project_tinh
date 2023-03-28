@@ -450,9 +450,17 @@
         font-size : 12px;
     }
   }
+  @media (max-width: 350px) {
+    .cart-popup {
+        width: 200px;
+    }
+}
   @media (max-width: 340px) {
     .user-login a {
         font-size : 10px;
+    }
+    .cart-popup-header h5 {
+        font-size: 15px;
     }
   }
 

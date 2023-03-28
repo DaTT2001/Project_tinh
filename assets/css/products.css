@@ -4,7 +4,7 @@ body {
 }
 /* product - card -start */
 .content {
-    margin-top: 120px;
+    margin-top: 80px;
     background-color: var(--main-color);
 }
 .product-img img {
@@ -478,6 +478,13 @@ background-color: var(--main-color);
     .offer-content h3 span {
         display: block;
     }
+    .product-img img {
+        height: 200px;
+    }
+    .product-img {
+        display: flex;
+        align-items: center;
+    }
 }
 
 
@@ -509,8 +516,13 @@ background-color: var(--main-color);
     .product-img img {
         height: 100%;
     }
+    .product-img {
+        margin-bottom: 10px;
+    }
     
 }
-@media (max-width: 600px) {
-
-}
+/* @media (max-width: 350px) {
+    .cart-popup {
+        width: 200px;
+    }
+} */

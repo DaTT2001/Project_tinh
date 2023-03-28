@@ -292,7 +292,7 @@
   .user-login > li {
     display: none;
   }
-  @media (max-width: 1191px) {
+  @media (max-width: 1230px) {
     .nav-bar-icon {
         display: block;
         top: 0;

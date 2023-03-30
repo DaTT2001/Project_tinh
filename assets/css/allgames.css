@@ -336,6 +336,9 @@ input:focus {
     }
 }
 @media (max-width: 992px) {
+    .container {
+        max-width: none;
+    }
     .type label {
         font-size: 14px;
     }
@@ -365,6 +368,7 @@ input:focus {
     }
 }
 @media (max-width: 768px) {
+
     .allgames-img h1 {
         font-size: 40px;
     }
@@ -405,7 +409,7 @@ input:focus {
 }
 @media (max-width: 576px) {
     .product-card {
-        width: 80%;
+        width: 100%;
     }
 }
 @media (max-width: 468px) {
@@ -417,5 +421,35 @@ input:focus {
     }
     .allgames-img img {
         height: 200px;
+    }
+}
+@media (max-width: 400px) {
+    .product-card img {
+        height: 200px;
+    }
+    .info-name-price p {
+        font-size: 10px;
+    }
+    .product-card .product-info a {
+        height: 120px;
+    }
+}
+@media (max-width: 350px) {
+    .filter-table {
+        width: 200px;
+    }
+    .type label {
+        font-size: 12px;
+    }
+}
+@media (max-width: 280px) {
+    .product-card img {
+        height: 160px;
+    }
+    .info-name-price p {
+        font-size: 10px;
+    }
+    .product-card .product-info a {
+        height: 130px;
     }
 }

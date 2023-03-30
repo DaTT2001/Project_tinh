@@ -69,7 +69,7 @@ function showRcmGames(data) {
   rcmContainer2.innerHTML = ""
   for(let i = 0; i < 5; i++) {
     rcmContainer1.innerHTML +=
-    `<div class="col-md col-sm-6 col-6">
+    `<div class="col-md col-sm-4 col-6">
     <div class="product-card">
     <a href="${checkLogin("products")}#${data[i].id}">
       <img
@@ -99,7 +99,7 @@ function showRcmGames(data) {
   }
   for(let i = 5; i < 10; i++) {
     rcmContainer2.innerHTML +=
-    `<div class="col-md col-sm-6 col-6">
+    `<div class="col-md col-sm-4 col-6">
     <div class="product-card">
     <a href="${checkLogin("products")}#${data[i].id}">
       <img
@@ -132,7 +132,7 @@ function showHotGames(data) {
   hotContainer.innerHTML = ""
   for(let i = 10; i < 15; i++) {
     hotContainer.innerHTML +=
-    `<div class="col-md col-sm-6 col-6">
+    `<div class="col-md col-sm-4 col-6">
     <div class="product-card">
     <a href="${checkLogin("products")}#${data[i].id}">
       <img

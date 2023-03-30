@@ -44,7 +44,7 @@ function showGameList(data) {
     listGameContainer.innerHTML =""
     for(let i = 0; i < data.length; i++) {
         listGameContainer.innerHTML +=
-          `<div class="col-md-3 col-sm-6 col-12 d-flex justify-content-center">
+          `<div class="col-md-3 col-sm-4 col-6 d-flex justify-content-center">
           <div class="product-card">
           <a href="${checkLogin("products")}#${data[i].id}">
             <img

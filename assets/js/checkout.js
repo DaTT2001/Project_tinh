@@ -65,7 +65,7 @@ async function getCart() {
     let price = 0
     const productPriceArr = []
     for(let i = 0; i < product_id_list.length; i++) {
-        const res1 = await fetch(`https://rawg.io/api/games/${product_id_list[i]}?token&key=26b25919da7f43a3a316e35eb4124cc4&/`)
+        const res1 = await fetch(`https://rawg.io/api/games/${product_id_list[i]}?token&key=0d6ef0d8df40452fad1a02cef66ad626&/`)
         const data1 = await res1.json()
         price += getPriceCart(data1)
         cartPopupContentEl.innerHTML += `

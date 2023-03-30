@@ -3,8 +3,8 @@
 //firebase
 const API_FIREBASE = "https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/users.json"
 //game
-const API_GAME = `https://rawg.io/api/games/${location.hash.slice(1)}?token&key=26b25919da7f43a3a316e35eb4124cc4&/`;
-const API_IMG = `https://rawg.io/api/games/${location.hash.slice(1)}/screenshots?token&key=26b25919da7f43a3a316e35eb4124cc4&/`
+const API_GAME = `https://rawg.io/api/games/${location.hash.slice(1)}?token&key=0d6ef0d8df40452fad1a02cef66ad626&/`;
+const API_IMG = `https://rawg.io/api/games/${location.hash.slice(1)}/screenshots?token&key=0d6ef0d8df40452fad1a02cef66ad626&/`
 
 const product_id = location.hash.slice(1)
 //khai bao platform
@@ -393,7 +393,7 @@ async function showLikeProduct(url) {
         });
       });
 }
-showLikeProduct(`https://rawg.io/api/games?token&key=26b25919da7f43a3a316e35eb4124cc4&platforms=187,4,9,18&stores=1`)
+showLikeProduct(`https://rawg.io/api/games?token&key=0d6ef0d8df40452fad1a02cef66ad626&platforms=187,4,9,18&stores=1`)
 function getPrice1(id) {
     if(id.rating === 0) {
         return 0.99

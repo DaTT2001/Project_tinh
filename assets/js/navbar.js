@@ -2,7 +2,7 @@ const navBarArea = document.querySelectorAll(".nav-bar button")
 const logo = document.querySelector(".logo")
 let uid = location.search.slice(6);
 const user = document.querySelector(".user-login");
-const API_RAWG = `https://rawg.io/api/games?token&key=26b25919da7f43a3a316e35eb4124cc4&platforms=187,4,9,18&stores=1`;
+const API_RAWG = `https://rawg.io/api/games?token&key=0d6ef0d8df40452fad1a02cef66ad626&platforms=187,4,9,18&stores=1`;
 
 
 
@@ -144,7 +144,7 @@ async function getCartCount() {
     let price = 0
     cartPopupContentEl.innerHTML = ""
     for(let i = 0; i < product_id_list.length; i++) {
-      const res1 = await fetch(`https://rawg.io/api/games/${product_id_list[i]}?token&key=26b25919da7f43a3a316e35eb4124cc4&/`)
+      const res1 = await fetch(`https://rawg.io/api/games/${product_id_list[i]}?token&key=0d6ef0d8df40452fad1a02cef66ad626&/`)
       const data1 = await res1.json()
       price += getPricePopup(data1)
       cartPopupContentEl.innerHTML += `

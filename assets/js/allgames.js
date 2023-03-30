@@ -3,7 +3,7 @@
 //firebase
 const API_FIREBASE = "https://main-project-28ab6-default-rtdb.asia-southeast1.firebasedatabase.app/users.json"
 //game
-const API_GAME = `https://rawg.io/api/games?token&key=26b25919da7f43a3a316e35eb4124cc4&platforms=187,4,9,18&stores=1&metacritic=1,100`;
+const API_GAME = `https://rawg.io/api/games?token&key=0d6ef0d8df40452fad1a02cef66ad626&platforms=187,4,9,18&stores=1&metacritic=1,100`;
 
 
 //khai bao platform
